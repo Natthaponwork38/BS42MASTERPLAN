@@ -1,0 +1,97 @@
+# BS42
+
+A read-only, mobile-first companion to the BS42 marathon workbook. React, TypeScript and Vite generate a static PWA with exactly three destinations: Plan, Long Run and Guardrails.
+
+## Run locally
+
+Requires Node.js 22.12 or later.
+
+```sh
+npm ci
+npm run dev
+```
+
+Create and serve the production PWA:
+
+```sh
+npm test
+npm run build
+npm run preview
+```
+
+The service worker is generated for the production build. The development server intentionally does not register a development service worker.
+
+## Source of truth
+
+The unchanged input is `BS42_Master_Plan_2026_Updated_2026-10-06.xlsx` at the repository root. Its exact filename is configured in `data/source-contract.json`. The filename in the specification contains `(1)`; the actual supplied file does not. The parser uses the actual supplied file.
+
+Only these sheets are extracted:
+
+| Sheet | Records | Non-empty cells |
+| --- | ---: | ---: |
+| BS42 Master Plan | 49 days | 350 |
+| Long Run Roadmap | 8 roadmap rows and 8 separate chart rows | 81 |
+| Guardrails | 15 statements and original title | 31 |
+
+Fueling Plan contributes nothing to the generated data or production bundle. The original workbook remains intact in the source repository; it is never copied into the deployed site. The Fueling principle statement in Guardrails remains because that sheet is included.
+
+`npm run data` generates `src/data/master-plan.json`, `long-run.json`, `guardrails.json` and `audit.json`. `npm run build` always runs the parser first. Browser code imports only generated data and type-only source types; workbook parsing libraries stay out of the application bundle.
+
+The parser verifies the observed workbook layout, every populated cell, required fields, source dates and weekdays, chronological order, midpoint formulas and cached results, secondary chart values, chart title and series bindings. Original strings, punctuation and line breaks are retained. Every field includes its source address, original raw value, formatted display, number format and formula/cache where present. Dates become timezone-free `YYYY-MM-DD` values while retaining original Excel serials. The race date is derived from the explicit RACE row.
+
+An unmapped cell, annotation, hyperlink, error, unrecognized formula, unexpected merged region, source emoji, chart discrepancy or changed reviewed record/cell count stops the build. The build never quietly discards a new region.
+
+To update training information, edit the workbook and rebuild. For intentional structural additions or removals, inspect the changes and update the parser mappings, chart bindings and reviewed counts in `data/source-contract.json`. Do not change counts solely to bypass a failed check. Never edit generated JSON as the source of truth.
+
+## Calendar behavior
+
+Today uses the device's local calendar date and updates when the app regains focus or crosses midnight. Plan dates never pass through local timezone timestamp conversions. Days to race use calendar-day arithmetic. Weeks are seven-day blocks from the workbook's first daily entry, 28 September 2026 (a Monday), giving seven weeks. Outside the plan, the app explains that Today is outside the range and keeps the full plan accessible.
+
+Past entries sit in an expandable Earlier days section. Today's entry and every future entry remain in chronological order. Original status notes, rather than elapsed dates, determine completed styling. No plan data is editable or stored in local storage.
+
+## PWA and offline
+
+The generated manifest uses standalone display, scoped start URL, 192px and 512px PNG icons, a maskable icon and an Apple touch icon. All JavaScript, CSS, bundled training data, app icons and the three-symbol Google font subset are precached. No remote font or runtime API is needed. Open the deployed app online once and wait for the service worker to finish caching before going offline. Later builds update the read-only bundle through the service worker.
+
+On iPhone Safari, use Share, then Add to Home Screen. `viewport-fit=cover`, safe-area padding and a fixed bottom navigation accommodate standalone mode. An actual iPhone is needed to verify installation and physical safe-area rendering.
+
+The UI uses only Google's Material Symbols Rounded (`calendar_month`, `route`, `rule`), packaged locally under the accompanying Apache 2.0 license. The PNG app icons are typographic BS42 branding. SVG is used only for the Long Run data visualization.
+
+## GitHub Pages
+
+The workflow `.github/workflows/deploy.yml` validates the parser, builds the PWA, tests the production app including offline reload, uploads the site and deploys it on pushes to `main` or manual runs.
+
+1. Put this project into a GitHub repository with a `main` branch and commit the workbook, application, generated data and lockfile.
+2. In repository Settings, Pages, select **GitHub Actions** as the build and deployment source.
+3. Push to `main` or run **Deploy BS42 to GitHub Pages** from Actions.
+
+The workflow derives the Vite base from the repository name. A project repository uses `/REPOSITORY/`; a `*.github.io` repository uses `/`. Navigation uses URL hashes so page refreshes do not require server rewrites. If you later configure a custom domain, explicitly set the workflow's `BASE_PATH` to `/`.
+
+Verify a repository subpath locally:
+
+```sh
+BASE_PATH=/bs42masterplan/ npm run build
+BASE_PATH=/bs42masterplan/ npm run preview
+```
+
+Visit `http://127.0.0.1:4173/bs42masterplan/`.
+
+## QA
+
+```sh
+npm test
+npx playwright install chromium
+BASE_PATH=/bs42masterplan/ npm run build
+BASE_PATH=/bs42masterplan/ npm run test:browser
+```
+
+Optional WebKit engine coverage:
+
+```sh
+npx playwright install webkit
+TEST_WEBKIT=1 BASE_PATH=/bs42masterplan/ npm run test:browser
+```
+
+Parser tests deliberately damage disposable copies to verify loud failures. Browser tests compare every daily field, long-run value, chart row and guardrail statement to the workbook. They check 430 × 932 layout, 320/390/1024px overflow, Today scrolling, hash navigation, manifest scope, cached assets and complete offline reload/navigation. See `QA_AUDIT.md` for the implementation audit and physical-device/deployment limits.
+
+Implementation references: [Vite GitHub Pages deployment](https://vite.dev/guide/static-deploy.html#github-pages), [Vite PWA deployment](https://vite-pwa-org.netlify.app/deployment/), [SheetJS cell objects](https://docs.sheetjs.com/docs/csf/cell/), [Google Material Symbols](https://developers.google.com/fonts/docs/material_symbols).
