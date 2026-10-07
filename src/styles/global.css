@@ -7,11 +7,13 @@
   font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased;
   --bg: #F7F7F5; --surface: #FFFFFF; --text: #151515; --muted: #6F6F6A; --line: #E8E8E5;
   --soft: #EFEFEB; --accent-neon: #C8FF00; --accent-text: #587900;
+  --today-surface: #FBFCF7; --today-border: rgba(88, 121, 0, .22);
   color: var(--text); background: var(--bg); color-scheme: light;
 }
 :root[data-theme='dark'] {
   --bg: #101110; --surface: #171817; --text: #F5F5F3; --muted: #A2A29D; --line: #292A28;
   --soft: #232421; --accent-text: #C8FF00; color-scheme: dark;
+  --today-surface: #141713; --today-border: rgba(200, 255, 0, .20);
 }
 * { box-sizing: border-box; }
 body { margin: 0; }
@@ -69,17 +71,20 @@ details > summary::marker { color: var(--muted); font-size: 11px; }
 .day-heading { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
 .day-heading h4 { font-size: 14px; font-weight: 600; }
 .day-context { display: flex; flex-wrap: wrap; gap: 12px; font-size: 12px; color: var(--muted); margin-top: 7px; line-height: 1.6; }
-.today-tag { font-size: 11px; font-weight: 650; letter-spacing: 1px; text-transform: uppercase; color: var(--accent-text); }
-.today-tag:before { content: ''; display: inline-block; width: 5px; height: 5px; margin: 0 6px 2px 0; background: var(--accent-neon); border-radius: 50%; }
-.is-today { border-top: 2px solid var(--accent-neon); padding-top: 25px; }
+.today-tag { font-size: 11px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--accent-text); }
 .is-race { border-top: 2px solid var(--accent-neon); }
+.day-entry.is-today { background: var(--today-surface); border: 1px solid var(--today-border); border-left: 4px solid var(--accent-neon); border-radius: 16px; padding: 24px 20px 26px; margin: 16px 0; }
+.is-today .day-heading { flex-direction: column; align-items: flex-start; gap: 8px; }
+.is-today .day-heading h4 { font-size: 15px; font-weight: 650; }
 .completed { color: var(--muted); }
 .key-label { font-weight: 600; color: var(--text); }
 .day-fields { display: grid; gap: 13px; margin-top: 19px; }
 .day-fields dt { font-size: 11px; color: var(--muted); margin-bottom: 3px; line-height: 1.5; }
 .day-fields dd { font-size: 14px; line-height: 1.65; }
 .day-fields .run-field dd { font-size: 19px; line-height: 1.5; letter-spacing: -.25px; font-weight: 500; }
-.is-today .run-field dd { font-size: 25px; font-weight: 650; letter-spacing: -.5px; }
+.is-today .day-fields { margin-top: 24px; gap: 17px; }
+.is-today .run-field { padding-bottom: 7px; }
+.is-today .run-field dd { font-size: 26px; font-weight: 650; line-height: 1.35; letter-spacing: -.5px; }
 .is-race .run-field dd { color: var(--accent-text); }
 .source-text { white-space: pre-wrap; overflow-wrap: anywhere; }
 .bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; border-top: 1px solid var(--line); background: var(--bg); padding-bottom: env(safe-area-inset-bottom); z-index: 5; }

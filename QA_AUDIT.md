@@ -76,3 +76,11 @@ The refinement preserves the three destinations, fixed bottom navigation, source
 - Offline reload/navigation, local font caching, manifest paths and fixed/safe-area navigation pass after the refinement. Physical iPhone installation and safe-area behavior remain untested on hardware.
 
 The 19 source/derivation checks and 28 production browser checks passed before publishing this refinement. GitHub Actions additionally runs the 14 Chromium checks before deploying to the existing HTTPS Pages site.
+
+## Focused Today refinement — 7 October 2026
+
+Only the chronological daily entry for the device's current date receives the new treatment: a subtle theme-specific surface, 1px boundary, 16px corners and a continuous 4px Neon Green left edge. TODAY sits above the source date and phase. The source Run uses 26px / 650 typography and tighter line height; secondary fields remain neutral and fully expanded. No sticky indicator, icons, animation, shadows, gradients or additional features were added. The top Today summary, ordinary daily entries, bottom navigation and other pages retain their previous presentation.
+
+At 430 × 932, screenshots were reviewed in Light and Dark Mode while Today enters from the preceding date, is centered, and leaves toward the following date. The boundary and rail remain recognizable even when the label is outside the viewport. Additional source-date screenshots verify the longer completed MP workout on 6 October and Easy / Aerobic Base workout on 8 October, including full notes and supporting fields. Screenshots were captured in both Chromium and WebKit.
+
+Light-mode Today label contrast is 4.91:1 on #FBFCF7; secondary text is 4.90:1. Dark-mode label contrast is 15.29:1 on #141713; secondary text is 7.05:1. All existing source reconciliation, responsive, theme and offline checks pass: 19 source/derivation tests and 28 production browser tests. The workbook, parser, contract and generated data remain unchanged, with all 462 cells represented and Fueling Plan excluded. Physical iPhone testing remains outside the verified checks.

@@ -132,6 +132,27 @@ test('capture mobile pages for visual QA', async ({ page }, testInfo) => {
     await page.goto(`./#/${route}`);
     await page.evaluate(() => document.fonts.ready);
     await page.screenshot({ path: testInfo.outputPath(`${route}-${theme}-430.png`) });
+    if (route === 'plan') {
+      const today = page.locator('.today-section');
+      await expect(today).toBeVisible();
+      const bounds = await today.evaluate(el => ({ top: el.getBoundingClientRect().top + scrollY, height: el.getBoundingClientRect().height }));
+      for (const [position,top] of [['entering',630],['centered',(932-bounds.height)/2],['leaving',100-bounds.height]] as const) {
+        await page.evaluate(y => window.scrollTo({ top: y, behavior: 'instant' }),bounds.top-top);
+        await page.screenshot({ path: testInfo.outputPath(`today-${theme}-${position}-430.png`) });
+      }
+    }
+  }
+  // Source workouts of different lengths must stay readable inside the highlight.
+  for (const theme of ['light','dark'] as const) for (const date of ['2026-10-06','2026-10-08']) {
+    await page.emulateMedia({ colorScheme: theme });
+    await page.clock.setFixedTime(new Date(`${date}T05:00:00+07:00`));
+    await page.goto('./#/plan'); await page.reload();
+    const today = page.locator('.today-section');
+    const row = source.plan.entries.find(e => e.fields.Date.value === date)!;
+    await expect(today.locator('.run-field dd')).toHaveText(String(row.fields.Run.value));
+    await today.evaluate(el => window.scrollTo({top:el.getBoundingClientRect().top+scrollY-40,behavior:'instant'}));
+    await page.screenshot({ path: testInfo.outputPath(`today-${date}-${theme}-430.png`) });
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   }
 });
 
