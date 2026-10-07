@@ -50,6 +50,27 @@ test('all Long Run and chart cells are accessible, with exact numeric precision'
   await expect(page.getByRole('status')).toHaveText('24 Oct · Min 24 · Max 26 · Mid 25 km');
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });
+test('Plan navigation always opens the top and repeated selection scrolls back up', async ({ page }) => {
+  await page.goto('./#/plan');
+  const planLink=page.getByRole('navigation').getByRole('link',{name:'Plan',exact:true});
+  for (const reducedMotion of ['no-preference','reduce'] as const) {
+    await page.emulateMedia({reducedMotion});
+    await page.getByRole('button',{name:'Today',exact:true}).click();
+    await expect.poll(() => page.evaluate(() => scrollY)).toBeGreaterThan(500);
+    await planLink.click();
+    await expect.poll(() => page.evaluate(() => scrollY)).toBe(0);
+    await expect(page.getByRole('heading',{name:'BS42',exact:true})).toBeInViewport();
+  }
+  for (const label of ['Long Run','Guardrails']) {
+    await page.getByRole('navigation').getByRole('link',{name:label,exact:true}).click();
+    await expect(page).toHaveTitle(`BS42 · ${label}`);
+    await page.evaluate(() => window.scrollTo({top:600,behavior:'instant'}));
+    await expect.poll(() => page.evaluate(() => scrollY)).toBeGreaterThan(0);
+    await planLink.click();
+    await expect(page.getByRole('heading',{name:'BS42',exact:true})).toBeInViewport();
+    await expect.poll(() => page.evaluate(() => scrollY)).toBe(0);
+  }
+});
 test('all Guardrails text and title are verbatim', async ({ page }) => {
   await page.goto('./#/guardrails');
   await expect(page.locator('.subtitle')).toHaveText(String(source.guardrails.title.value));
@@ -116,13 +137,17 @@ test('manifest and all assets work under the configured Pages path', async ({ pa
   await expect(page.locator('.bottom-nav')).toHaveCSS('position','fixed');
 });
 test('small mobile and desktop widths have no horizontal overflow', async ({ page }) => {
-  for(const width of [320,390,430,1024]) {
+  for(const width of [320,390,430,596,1024]) {
     await page.setViewportSize({width,height:932});
     for(const route of ['plan','long-run','guardrails']) {
       await page.goto(`./#/${route}`);
       await expect(page.locator('h1')).toBeVisible();
       await page.evaluate(() => document.fonts.ready);
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `${route} at ${width}px`).toBe(true);
+      if (route === 'plan' && width >= 430) {
+        const label=await page.locator('.countdown span').evaluate(el => ({height:el.getBoundingClientRect().height,lineHeight:parseFloat(getComputedStyle(el).lineHeight)}));
+        expect(label.height).toBeLessThanOrEqual(label.lineHeight+1);
+      }
     }
   }
 });
@@ -141,6 +166,9 @@ test('capture mobile pages for visual QA', async ({ page }, testInfo) => {
       await page.screenshot({ path: testInfo.outputPath(`guardrails-pace-${theme}-430.png`) });
     }
     if (route === 'plan') {
+      await page.setViewportSize({width:596,height:779});
+      await page.screenshot({path:testInfo.outputPath(`plan-${theme}-596.png`)});
+      await page.setViewportSize({width:430,height:932});
       const today = page.locator('.today-section');
       await expect(today).toBeVisible();
       const bounds = await today.evaluate(el => ({ top: el.getBoundingClientRect().top + scrollY, height: el.getBoundingClientRect().height }));
@@ -225,7 +253,7 @@ test('both themes retain readable contrast, compact controls and only Material S
           }
           return getComputedStyle(document.documentElement).backgroundColor;
         };
-        const selector='.key-value,.countdown strong,.roadmap-heading>p,.subtitle,.eyebrow,.today-tag,.today-section .day-context,.today-section dt,.today-section dd,.bottom-nav a[aria-current]>span:last-child,.theme-selected,.chart-reading,.chart-select button[aria-pressed=true]';
+        const selector='.key-value,.countdown strong,.roadmap-heading>p,.subtitle,.eyebrow,.today-button,.today-tag,.today-section .day-context,.today-section dt,.today-section dd,.bottom-nav a[aria-current]>span:last-child,.theme-selected,.chart-reading,.chart-select button[aria-pressed=true]';
         return {
           text:[...document.querySelectorAll(selector)].map(el=>({color:getComputedStyle(el).color,bg:background(el)})),
           structure:[...document.querySelectorAll('.today-section,.bottom-nav a[aria-current] .material-symbols-rounded,.chart-selected')].map(el=>({

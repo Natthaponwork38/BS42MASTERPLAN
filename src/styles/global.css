@@ -7,6 +7,7 @@
   font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased;
   --bg: #F7F7F5; --surface: #FFFFFF; --text: #151515; --muted: #6F6F6A; --line: #E8E8E5;
   --soft: #EFEFEB; --today-surface: var(--accent-muted-bg);
+  --accent-action: var(--accent-text); --accent-on-action: var(--bg);
   color: var(--text); background: var(--bg); color-scheme: light;
 }
 /* Accent roles: selected state, readable text, structural edge, soft separator, surface. */
@@ -41,11 +42,11 @@ p, dd { overflow-wrap: anywhere; }
 .theme-track { display: flex; align-items: center; width: 52px; height: 30px; padding: 2px; background: var(--soft); border: 1px solid var(--line); border-radius: 18px; }
 .theme-track .material-symbols-rounded { font-size: 17px; padding: 0; width: 24px; height: 24px; flex: 0 0 24px; overflow: hidden; display: grid; place-items: center; color: var(--muted); border-radius: 50%; }
 .theme-track .theme-selected { background: var(--accent-muted-bg); color: var(--accent-text); }
-.text-button { min-height: 44px; padding: 10px 0 10px 14px; border: 0; background: transparent; font-size: 12px; font-weight: 550; text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 5px; }
+.today-button { min-height: 44px; padding: 10px 16px; border: 0; border-radius: 4px; background: var(--accent-action); color: var(--accent-on-action); font-size: 12px; font-weight: 650; }
 .training-summary { display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 23px 0 18px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); column-gap: 18px; }
 .countdown { display: flex; gap: 10px; align-items: baseline; }
 .countdown strong { font-size: 46px; letter-spacing: -2px; font-weight: 600; line-height: 1.2; font-variant-numeric: tabular-nums; color: var(--accent-text); }
-.countdown span { font-size: 13px; line-height: 1.35; max-width: 62px; color: var(--muted); }
+.countdown span { font-size: 13px; line-height: 1.35; color: var(--muted); }
 .phase-summary { display: grid; gap: 5px; padding-left: 22px; border-left: 1px solid var(--line); }
 .phase-summary strong { font-size: 17px; font-weight: 600; }
 .phase-summary span { font-size: 13px; color: var(--muted); }

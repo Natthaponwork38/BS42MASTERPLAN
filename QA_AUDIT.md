@@ -50,7 +50,7 @@ The only presentation convention is training-week numbering: seven-day blocks st
 ## Build and deployment readiness
 
 - `npm test`: **19 passed**.
-- `TEST_WEBKIT=1 BASE_PATH=/BS42MASTERPLAN/ npm run test:browser`: **28 passed**, fourteen per browser, with no skipped checks.
+- `TEST_WEBKIT=1 BASE_PATH=/BS42MASTERPLAN/ npm run test:browser`: **30 passed**, fifteen per browser, with no skipped checks.
 - `BASE_PATH=/BS42MASTERPLAN/ npm run build`: **passed**, including Excel regeneration, completeness validation, TypeScript checks, Vite production output and PWA service-worker generation.
 - Repository-path manifest, assets, font, navigation, refresh and offline behavior verified at `/BS42MASTERPLAN/`.
 - GitHub Actions workflow is complete: dependency installation, parser/failure tests, build, Chromium production QA, artifact upload and Pages deployment.
@@ -102,3 +102,10 @@ All UI green values are centralized in theme token definitions. Component rules 
 Light accent text measures 4.72:1 on the page, 4.86:1 on Today/selected surfaces and 5.06:1 on white. Light structural rail/icon contrast is 3.04:1 on the page and 3.14:1 on Today. Dark neon text is 16.00:1 on the page and 15.56:1 on Today. Secondary labels remain neutral and readable. Text labels, font weight, aria-current/aria-pressed and spatial structure continue to identify states without relying only on color.
 
 The production visual review passed for all three destinations in both themes at 430 × 932, Today entering/centered/leaving the viewport, longer MP/Easy source workouts, selected Long Run data and Guardrails pace values. All 19 source/derivation tests and 28 Chromium/WebKit browser checks passed, including responsive widths, system/manual theme behavior, source fidelity, accent contrast and offline checks. The production build passed with 16 precached resources. The source workbook, parser, generated data, Today logic, page components, read-only scope, navigation structure and deployment configuration have no changes. No gradients, glow, emoji, new icons/libraries, sticky elements or decorative animation were added.
+
+## Plan interaction polish — 7 October 2026
+
+- Selecting Plan from either other destination opens Plan at the top. Selecting Plan while it is already active scrolls to the top smoothly; reduced-motion preference uses immediate scrolling. Modified link clicks retain normal browser behavior. The three destinations and other navigation behavior are unchanged.
+- The countdown no longer forces a 62px label width. “days to race” fits on one line at 430px and 596px, and wraps naturally on narrower screens when necessary. All destinations were checked for overflow at 320, 390, 430, 596 and 1024px.
+- View day is a filled green button with a 44px touch target and the same Today action. Semantic action tokens inherit accessible theme colors: light #587900 with #F7F7F5 text (4.72:1), dark #C8FF00 with #101110 text (16.00:1). Keyboard focus remains visible.
+- Plan screenshots reviewed in both themes at 430 × 932 and the annotated 596 × 779 viewport. The 19 source/derivation tests, 30 Chromium/WebKit browser checks and production PWA build pass. The workbook, parser, generated data, source completeness, Today date logic, PWA and deployment configuration remain unchanged; all 462 source cells are represented and Fueling Plan remains excluded.

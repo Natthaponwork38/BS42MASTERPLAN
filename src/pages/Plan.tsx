@@ -19,7 +19,7 @@ export function Plan({ today }: { today: string }) {
       <div className="phase-summary"><strong>{summary.phase}</strong><span>{summary.week ? `Week ${summary.week} / ${summary.totalWeeks}` : `${summary.totalWeeks}-week plan`}</span></div>
       <p className="race-date">Race · {formatDate(dateOf(summary.race), { day: '2-digit', month: 'long', year: 'numeric' })}</p>
     </section>
-    <section className="today-focus" aria-label="Today's workout"><div className="focus-heading"><p className="eyebrow today-label">Today</p><button className="text-button" onClick={todayAction} aria-label="Today">View day</button></div>
+    <section className="today-focus" aria-label="Today's workout"><div className="focus-heading"><p className="eyebrow today-label">Today</p><button className="today-button" onClick={todayAction} aria-label="Today">View day</button></div>
       {summary.current ? <><p className="next-date">{formatDate(today, { weekday: 'short', day: '2-digit', month: 'short' })}</p><p className="today-run"><SourceValue cell={summary.current.fields.Run} /></p></> : <p className="muted">{today < dateOf(plan.entries[0]) ? 'The plan has not started yet.' : 'The plan is complete.'} All dates remain below.</p>}
     </section>
     {summary.next && <section className="next-session" aria-label="Next key session"><p className="eyebrow">Next key session</p><p className="next-date">{formatDate(dateOf(summary.next), { weekday: 'short', day: '2-digit', month: 'short' })}</p><p className="next-run"><SourceValue cell={summary.next.fields.Run} emphasize={/LONG RUN/.test(String(summary.next.fields.Run.value)) || summary.next.fields.Phase.value === 'RACE' ? 'distance' : 'pace'} /></p></section>}
