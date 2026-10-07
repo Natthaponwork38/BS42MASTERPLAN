@@ -51,15 +51,19 @@ To update training information, edit the workbook and rebuild. For intentional s
 
 Today uses the device's local calendar date and updates when the app regains focus or crosses midnight. Plan dates never pass through local timezone timestamp conversions. Days to race use calendar-day arithmetic. Weeks are seven-day blocks from the workbook's first daily entry, 28 September 2026 (a Monday), giving seven weeks. Outside the plan, the app explains that Today is outside the range and keeps the full plan accessible.
 
-Past entries sit in an expandable Earlier days section. Today's entry and every future entry remain in chronological order. Original status notes, rather than elapsed dates, determine completed styling. No plan data is editable or stored in local storage.
+All 49 days remain visible in chronological order, grouped into seven source-date weeks. A compact Today summary exposes the exact main Run at the top; View day scrolls to its complete source entry. Original status notes, rather than elapsed dates, determine completed styling. Next key session selects the earliest uncompleted prescribed MP / Marathon Pace, Threshold, Tempo, Long Run or explicit RACE entry on or after today. Optional quality touches and negative workout mentions do not qualify. This is a display classification of source workouts, not generated training advice.
+
+The global Material Symbols switch selects Light or Dark Mode. A manual choice is stored under `bs42-theme` in localStorage; without a choice, the app follows the system scheme, including later changes. An early head script applies theme and browser theme-color before React or its assets load. Storage denial does not disable the control. Training information remains read-only and is never saved in localStorage.
+
+Neon Green (`#C8FF00`) marks a few focus points. Light-mode accent text uses `#587900` (4.72:1 against the background), and secondary text uses `#6F6F6A` (4.71:1). The suggested `#648A00` / `#747474` shades were slightly darkened to meet 4.5:1 for small text. Long Run source values and midpoint formulas remain available under each Source values disclosure; Guardrails emphasis wraps exact source substrings without rewriting them.
 
 ## PWA and offline
 
-The generated manifest uses standalone display, scoped start URL, 192px and 512px PNG icons, a maskable icon and an Apple touch icon. All JavaScript, CSS, bundled training data, app icons and the three-symbol Google font subset are precached. No remote font or runtime API is needed. Open the deployed app online once and wait for the service worker to finish caching before going offline. Later builds update the read-only bundle through the service worker.
+The generated manifest uses standalone display, scoped start URL, 192px and 512px PNG icons, a maskable icon and an Apple touch icon. All JavaScript, CSS, bundled training data, app icons and the five-symbol Google font subset are precached. No remote font or runtime API is needed. Open the deployed app online once and wait for the service worker to finish caching before going offline. Later builds update the read-only bundle through the service worker.
 
 On iPhone Safari, use Share, then Add to Home Screen. `viewport-fit=cover`, safe-area padding and a fixed bottom navigation accommodate standalone mode. An actual iPhone is needed to verify installation and physical safe-area rendering.
 
-The UI uses only Google's Material Symbols Rounded (`calendar_month`, `route`, `rule`), packaged locally under the accompanying Apache 2.0 license. The PNG app icons are typographic BS42 branding. SVG is used only for the Long Run data visualization.
+The UI uses only Google's Material Symbols Rounded (`calendar_month`, `route`, `rule`, `light_mode`, `dark_mode`), packaged locally under the accompanying Apache 2.0 license. The PNG app icons are typographic BS42 branding. SVG is used only for the Long Run data visualization.
 
 ## GitHub Pages
 
@@ -74,28 +78,28 @@ The workflow derives the Vite base from the repository name. A project repositor
 Verify a repository subpath locally:
 
 ```sh
-BASE_PATH=/bs42masterplan/ npm run build
-BASE_PATH=/bs42masterplan/ npm run preview
+BASE_PATH=/BS42MASTERPLAN/ npm run build
+BASE_PATH=/BS42MASTERPLAN/ npm run preview
 ```
 
-Visit `http://127.0.0.1:4173/bs42masterplan/`.
+Visit `http://127.0.0.1:4173/BS42MASTERPLAN/`.
 
 ## QA
 
 ```sh
 npm test
 npx playwright install chromium
-BASE_PATH=/bs42masterplan/ npm run build
-BASE_PATH=/bs42masterplan/ npm run test:browser
+BASE_PATH=/BS42MASTERPLAN/ npm run build
+BASE_PATH=/BS42MASTERPLAN/ npm run test:browser
 ```
 
 Optional WebKit engine coverage:
 
 ```sh
 npx playwright install webkit
-TEST_WEBKIT=1 BASE_PATH=/bs42masterplan/ npm run test:browser
+TEST_WEBKIT=1 BASE_PATH=/BS42MASTERPLAN/ npm run test:browser
 ```
 
-Parser tests deliberately damage disposable copies to verify loud failures. Browser tests compare every daily field, long-run value, chart row and guardrail statement to the workbook. They check 430 × 932 layout, 320/390/1024px overflow, Today scrolling, hash navigation, manifest scope, cached assets and complete offline reload/navigation. See `QA_AUDIT.md` for the implementation audit and physical-device/deployment limits.
+Parser tests deliberately damage disposable copies to verify loud failures. Browser tests compare every daily field, long-run value, chart row and guardrail statement to the workbook. They check all three pages in both themes at 430 × 932, 320/390/1024px overflow, Today scrolling, seven visible weeks, exact source disclosures, theme persistence, system preference, storage denial, pre-React theme/background, text contrast, hash navigation, manifest scope, cached assets and complete offline reload/navigation. See `QA_AUDIT.md` for the implementation audit and physical-device/deployment limits.
 
 Implementation references: [Vite GitHub Pages deployment](https://vite.dev/guide/static-deploy.html#github-pages), [Vite PWA deployment](https://vite-pwa-org.netlify.app/deployment/), [SheetJS cell objects](https://docs.sheetjs.com/docs/csf/cell/), [Google Material Symbols](https://developers.google.com/fonts/docs/material_symbols).

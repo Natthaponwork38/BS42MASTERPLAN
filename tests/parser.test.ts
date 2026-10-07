@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 import { unzipSync, zipSync, strFromU8, strToU8 } from 'fflate';
 import { parseWorkbook } from '../scripts/parser';
 import contract from '../data/source-contract.json' with { type: 'json' };
-import { calendarDate, deriveSummary } from '../src/lib/dates';
+import { calendarDate, deriveSummary, isKeySession, trainingWeeks } from '../src/lib/dates';
 import { XMLParser } from 'fast-xml-parser';
 import type { Cell } from '../scripts/parser';
 
@@ -86,4 +86,24 @@ test('today and training summary are derived from source dates', () => {
 test('local date uses calendar components rather than UTC conversion', () => {
   const fake = { getFullYear: () => 2026, getMonth: () => 9, getDate: () => 7 } as Date;
   assert.equal(calendarDate(fake),'2026-10-07');
+});
+test('key sessions include prescribed MP quality and exclude optional or negative mentions', () => {
+  const entries = parseWorkbook(source).plan.entries;
+  for (const [today,next] of [['2026-10-11','2026-10-15'],['2026-10-18','2026-10-22'],['2026-10-25','2026-10-31'],['2026-11-01','2026-11-05'],['2026-11-08','2026-11-12'],['2026-11-13','2026-11-15']]) {
+    assert.equal(deriveSummary(entries,today).next?.fields.Date.value,next);
+  }
+  const row = entries[0];
+  const classify = (run: string) => isKeySession({ ...row, fields: { ...row.fields, Run: { ...row.fields.Run, value: run } } });
+  for (const run of ['Threshold 4×6\'','Tempo 20 min','Marathon Pace 25 min','Easy + MP 20 min']) assert.equal(classify(run),true,run);
+  for (const run of ['Easy, no MP needed','Easy; no hard threshold','Easy without tempo','Easy + optional MP','MP max if fresh','Recovery']) assert.equal(classify(run),false,run);
+  assert.equal(isKeySession(entries.find(e => e.fields.Date.value === '2026-10-29')!),false);
+  assert.equal(deriveSummary(entries,'2026-10-06').next?.fields.Date.value,'2026-10-10');
+});
+test('week groups retain every source day exactly once in calendar order', () => {
+  const entries = parseWorkbook(source).plan.entries, weeks = trainingWeeks(entries);
+  assert.equal(weeks.length,7);
+  assert.deepEqual(weeks.flatMap(w => w.days),entries);
+  assert.equal(weeks[1].days[0].fields.Date.value,'2026-10-05');
+  assert.equal(weeks[1].days.at(-1)!.fields.Date.value,'2026-10-11');
+  assert.deepEqual(weeks[5].phases,['Taper']);
 });

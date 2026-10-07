@@ -15,7 +15,10 @@ test('430px Plan is complete, Today works and notes remain exact', async ({ page
   await expect(page.getByRole('navigation').getByRole('link')).toHaveCount(3);
   await expect(page.getByText('days to race')).toBeVisible();
   await expect(page.getByText('Week 2 / 7')).toBeVisible();
-  await page.locator('.earlier-days>summary').click();
+  await expect(page.locator('.training-week')).toHaveCount(7);
+  await expect(page.locator('.timeline details')).toHaveCount(0);
+  await expect(page.locator('.today-focus .today-run')).toHaveText('REST');
+  await expect(page.locator('.current-week .week-heading')).toContainText('Week 2');
   for (const e of source.plan.entries) {
     const row = page.locator(`[data-sheet="BS42 Master Plan"][data-row="${e.row}"]`);
     await expect(row).toBeVisible();
@@ -36,10 +39,10 @@ test('all Long Run and chart cells are accessible, with exact numeric precision'
   await expect(page.locator('svg')).toHaveCount(1);
   for (const e of source.longRun.entries) {
     const row = page.locator(`.roadmap-entry[data-row="${e.row}"]`);
+    await row.locator('.source-values>summary').click();
     for (const label of ['Role','Target Min (km)','Target Max (km)','Planning Midpoint (km)']) await expect(row.locator(`[data-source-cell="${e.fields[label].address}"]`)).toHaveText(String(e.fields[label].value));
     await expect(row.locator('time')).toHaveAttribute('datetime',String(e.fields.Date.value));
-    await row.locator('.formula-detail>summary').click();
-    await expect(row.locator('.formula-detail p')).toContainText(e.fields['Planning Midpoint (km)'].formula!);
+    await expect(row.locator('.source-formula')).toContainText(e.fields['Planning Midpoint (km)'].formula!);
   }
   await page.locator('.chart-source>summary').click();
   for (const e of source.longRun.chart.entries) for (const c of Object.values(e.fields)) await expect(page.locator(`.chart-source-row [data-source-cell="${c.address}"]`)).toHaveText(String(c.value));
@@ -89,11 +92,15 @@ test('production service worker caches every asset and survives an unavailable o
   if (browserName === 'chromium') await context.setOffline(true);
   await page.reload();
   await expect(page.getByRole('heading',{name:'BS42',exact:true})).toBeVisible();
+  const offlineTheme = await page.locator('html').getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  await page.getByRole('button',{name:`Switch to ${offlineTheme} mode`}).click();
+  await expect(page.locator('html')).toHaveAttribute('data-theme',offlineTheme);
   await page.getByRole('link',{name:'Long Run',exact:true}).click();
   await expect(page.locator('.roadmap-entry')).toHaveCount(8);
   await page.getByRole('link',{name:'Guardrails',exact:true}).click();
   await expect(page.getByRole('heading',{name:'Fueling principle',exact:true})).toBeVisible();
   await page.reload(); await expect(page.getByRole('heading',{name:'Guardrails',exact:true})).toBeVisible();
+  await expect(page.locator('html')).toHaveAttribute('data-theme',offlineTheme);
   expect(await page.evaluate(() => document.fonts.check('23px "Material Symbols Rounded"'))).toBe(true);
   expect(requests.filter(u => !u.startsWith(origin))).toEqual([]);
   } finally { server.closeAllConnections(); server.close(); }
@@ -113,14 +120,90 @@ test('small mobile and desktop widths have no horizontal overflow', async ({ pag
     await page.setViewportSize({width,height:932});
     for(const route of ['plan','long-run','guardrails']) {
       await page.goto(`./#/${route}`);
+      await expect(page.locator('h1')).toBeVisible();
+      await page.evaluate(() => document.fonts.ready);
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `${route} at ${width}px`).toBe(true);
     }
   }
 });
 test('capture mobile pages for visual QA', async ({ page }, testInfo) => {
-  for (const route of ['plan','long-run','guardrails']) {
+  for (const theme of ['light','dark']) for (const route of ['plan','long-run','guardrails']) {
+    await page.emulateMedia({ colorScheme: theme as 'light' | 'dark' });
     await page.goto(`./#/${route}`);
     await page.evaluate(() => document.fonts.ready);
-    await page.screenshot({ path: testInfo.outputPath(`${route}-430.png`) });
+    await page.screenshot({ path: testInfo.outputPath(`${route}-${theme}-430.png`) });
+  }
+});
+
+for (const [system,saved,expected] of [['dark',null,'dark'],['light',null,'light'],['light','dark','dark'],['dark','light','light']] as const) {
+  test(`theme resolves before React: system ${system}, saved ${saved}`, async ({ page }) => {
+    await page.emulateMedia({ colorScheme: system });
+    if (saved) await page.addInitScript(value => localStorage.setItem('bs42-theme',value), saved);
+    let release!: () => void;
+    const gate = new Promise<void>(resolve => { release = resolve; });
+    await page.route('**/assets/*.js', async route => { await gate; await route.continue(); });
+    try {
+      await page.goto('./', { waitUntil: 'commit' });
+      await expect(page.locator('html')).toHaveAttribute('data-theme',expected);
+      await expect(page.locator('html')).toHaveCSS('background-color', expected === 'dark' ? 'rgb(16, 17, 16)' : 'rgb(247, 247, 245)');
+      await expect(page.locator('#root')).toBeEmpty();
+      await expect(page.locator('meta[name=theme-color]')).toHaveAttribute('content',expected === 'dark' ? '#101110' : '#F7F7F5');
+    } finally { release(); }
+    await expect(page.getByRole('heading',{name:'BS42',exact:true})).toBeVisible();
+    await expect(page.getByRole('button',{name:`Switch to ${expected === 'dark' ? 'light' : 'dark'} mode`})).toBeVisible();
+  });
+}
+test('theme follows system until manually selected, persists across pages and reload', async ({ page }) => {
+  await page.emulateMedia({ colorScheme: 'light' }); await page.goto('./');
+  await expect(page.getByRole('heading',{name:'BS42',exact:true})).toBeVisible();
+  await page.emulateMedia({ colorScheme: 'dark' });
+  await expect(page.locator('html')).toHaveAttribute('data-theme','dark');
+  await page.getByRole('button',{name:'Switch to light mode'}).press('Enter');
+  await page.emulateMedia({ colorScheme: 'dark' });
+  await expect(page.locator('html')).toHaveAttribute('data-theme','light');
+  expect(await page.evaluate(() => localStorage.getItem('bs42-theme'))).toBe('light');
+  await page.getByRole('link',{name:'Long Run',exact:true}).click();
+  await expect(page.locator('html')).toHaveAttribute('data-theme','light');
+  await page.reload(); await expect(page.locator('html')).toHaveAttribute('data-theme','light');
+  await page.getByRole('button',{name:'Switch to dark mode'}).click();
+  await page.reload(); await expect(page.locator('html')).toHaveAttribute('data-theme','dark');
+  expect(await page.evaluate(() => localStorage.getItem('bs42-theme'))).toBe('dark');
+});
+test('theme is usable when browser storage is denied', async ({ page }) => {
+  await page.addInitScript(() => { Object.defineProperty(window,'localStorage',{get(){throw new DOMException('Denied','SecurityError');}}); });
+  await page.emulateMedia({ colorScheme: 'dark' }); await page.goto('./');
+  await expect(page.locator('html')).toHaveAttribute('data-theme','dark');
+  await page.getByRole('button',{name:'Switch to light mode'}).click();
+  await expect(page.locator('html')).toHaveAttribute('data-theme','light');
+});
+test('both themes retain readable contrast, compact controls and only Material Symbols', async ({ page }) => {
+  function luminance(rgb: string) {
+    const [r,g,b] = rgb.match(/[\d.]+/g)!.slice(0,3).map(Number).map(v => v/255).map(v => v <= .04045 ? v/12.92 : ((v+.055)/1.055)**2.4);
+    return .2126*r+.7152*g+.0722*b;
+  }
+  await page.emulateMedia({ colorScheme: 'light' }); await page.goto('./');
+  for (const theme of ['light','dark']) {
+    for (const route of ['plan','long-run','guardrails']) {
+      await page.goto(`./#/${route}`);
+      await expect(page.locator('html')).toHaveAttribute('data-theme',theme);
+      await expect(page.locator('footer')).toHaveCount(0);
+      const colors = await page.evaluate(() => {
+        const root=getComputedStyle(document.documentElement);
+        return { bg:root.backgroundColor, values:[...document.querySelectorAll('.key-value,.countdown strong,.roadmap-heading>p,.subtitle,.eyebrow')].map(el=>getComputedStyle(el).color) };
+      });
+      for (const color of colors.values) {
+        const a=luminance(color), b=luminance(colors.bg);
+        expect((Math.max(a,b)+.05)/(Math.min(a,b)+.05)).toBeGreaterThanOrEqual(4.5);
+      }
+      const toggle = await page.locator('.theme-toggle').boundingBox(); expect(toggle!.height).toBeGreaterThanOrEqual(44);
+      const icons = await page.locator('.material-symbols-rounded').allTextContents();
+      expect(icons.every(icon=>['calendar_month','route','rule','light_mode','dark_mode'].includes(icon))).toBe(true);
+      expect(await page.locator('body').innerText()).not.toMatch(/\p{Extended_Pictographic}|Read-only training companion/u);
+      if (route === 'long-run') {
+        const boxes = await page.locator('.chart-select button').evaluateAll(els=>els.map(el=>({y:el.getBoundingClientRect().y,height:el.getBoundingClientRect().height})));
+        expect(new Set(boxes.map(b=>b.y)).size).toBe(1); expect(boxes.every(b=>b.height>=44)).toBe(true);
+      }
+    }
+    if (theme === 'light') await page.getByRole('button',{name:'Switch to dark mode'}).click();
   }
 });

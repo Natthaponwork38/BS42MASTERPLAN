@@ -4,6 +4,7 @@ import { Plan } from './pages/Plan';
 import { LongRun } from './pages/LongRun';
 import { Guardrails } from './pages/Guardrails';
 import { calendarDate } from './lib/dates';
+import { ThemeToggle } from './components/ThemeToggle';
 
 const getDestination = (): Destination => destinations.find(d => window.location.hash === `#/${d.id}`)?.id ?? 'plan';
 export default function App() {
@@ -26,8 +27,7 @@ export default function App() {
     if (!firstRender.current) main.current?.focus({ preventScroll: true });
     firstRender.current = false;
   }, [active]);
-  return <><a href="#main" className="skip-link">Skip to content</a><main id="main" ref={main} tabIndex={-1} key={active}>
+  return <><a href="#main" className="skip-link">Skip to content</a><div className="app-header"><ThemeToggle /></div><main id="main" ref={main} tabIndex={-1} key={active}>
     {active === 'plan' ? <Plan today={today} /> : active === 'long-run' ? <LongRun /> : <Guardrails />}
-    <footer className="page-footer">BS42 · Read-only training companion</footer>
   </main><BottomNav active={active} /></>;
 }
