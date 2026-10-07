@@ -132,6 +132,14 @@ test('capture mobile pages for visual QA', async ({ page }, testInfo) => {
     await page.goto(`./#/${route}`);
     await page.evaluate(() => document.fonts.ready);
     await page.screenshot({ path: testInfo.outputPath(`${route}-${theme}-430.png`) });
+    if (route === 'long-run') {
+      await page.getByRole('button',{name:'Inspect 24 Oct'}).click();
+      await page.screenshot({ path: testInfo.outputPath(`long-run-selected-${theme}-430.png`) });
+    }
+    if (route === 'guardrails') {
+      await page.getByRole('heading',{name:'Pace guide',exact:true}).evaluate(el => window.scrollTo({top:el.getBoundingClientRect().top+scrollY-60,behavior:'instant'}));
+      await page.screenshot({ path: testInfo.outputPath(`guardrails-pace-${theme}-430.png`) });
+    }
     if (route === 'plan') {
       const today = page.locator('.today-section');
       await expect(today).toBeVisible();
@@ -208,13 +216,31 @@ test('both themes retain readable contrast, compact controls and only Material S
       await page.goto(`./#/${route}`);
       await expect(page.locator('html')).toHaveAttribute('data-theme',theme);
       await expect(page.locator('footer')).toHaveCount(0);
+      if (route === 'long-run') await page.getByRole('button',{name:'Inspect 24 Oct'}).click();
       const colors = await page.evaluate(() => {
-        const root=getComputedStyle(document.documentElement);
-        return { bg:root.backgroundColor, values:[...document.querySelectorAll('.key-value,.countdown strong,.roadmap-heading>p,.subtitle,.eyebrow')].map(el=>getComputedStyle(el).color) };
+        const background = (element: Element) => {
+          for (let el: Element | null=element;el;el=el.parentElement) {
+            const bg=getComputedStyle(el).backgroundColor;
+            if (bg !== 'transparent' && bg !== 'rgba(0, 0, 0, 0)') return bg;
+          }
+          return getComputedStyle(document.documentElement).backgroundColor;
+        };
+        const selector='.key-value,.countdown strong,.roadmap-heading>p,.subtitle,.eyebrow,.today-tag,.today-section .day-context,.today-section dt,.today-section dd,.bottom-nav a[aria-current]>span:last-child,.theme-selected,.chart-reading,.chart-select button[aria-pressed=true]';
+        return {
+          text:[...document.querySelectorAll(selector)].map(el=>({color:getComputedStyle(el).color,bg:background(el)})),
+          structure:[...document.querySelectorAll('.today-section,.bottom-nav a[aria-current] .material-symbols-rounded,.chart-selected')].map(el=>({
+            color:el.matches('.today-section') ? getComputedStyle(el).borderLeftColor : el.matches('.chart-selected') ? getComputedStyle(el).fill : getComputedStyle(el).color,
+            bg:background(el),
+          })),
+        };
       });
-      for (const color of colors.values) {
-        const a=luminance(color), b=luminance(colors.bg);
+      for (const {color,bg} of colors.text) {
+        const a=luminance(color), b=luminance(bg);
         expect((Math.max(a,b)+.05)/(Math.min(a,b)+.05)).toBeGreaterThanOrEqual(4.5);
+      }
+      for (const {color,bg} of colors.structure) {
+        const a=luminance(color), b=luminance(bg);
+        expect((Math.max(a,b)+.05)/(Math.min(a,b)+.05)).toBeGreaterThanOrEqual(3);
       }
       const toggle = await page.locator('.theme-toggle').boundingBox(); expect(toggle!.height).toBeGreaterThanOrEqual(44);
       const icons = await page.locator('.material-symbols-rounded').allTextContents();

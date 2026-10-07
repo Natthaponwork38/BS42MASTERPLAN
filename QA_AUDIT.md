@@ -77,10 +77,28 @@ The refinement preserves the three destinations, fixed bottom navigation, source
 
 The 19 source/derivation checks and 28 production browser checks passed before publishing this refinement. GitHub Actions additionally runs the 14 Chromium checks before deploying to the existing HTTPS Pages site.
 
-## Focused Today refinement — 7 October 2026
+## Earlier Today refinement — 7 October 2026 (superseded by the edge treatment below)
 
 Only the chronological daily entry for the device's current date receives the new treatment: a subtle theme-specific surface, 1px boundary, 16px corners and a continuous 4px Neon Green left edge. TODAY sits above the source date and phase. The source Run uses 26px / 650 typography and tighter line height; secondary fields remain neutral and fully expanded. No sticky indicator, icons, animation, shadows, gradients or additional features were added. The top Today summary, ordinary daily entries, bottom navigation and other pages retain their previous presentation.
 
 At 430 × 932, screenshots were reviewed in Light and Dark Mode while Today enters from the preceding date, is centered, and leaves toward the following date. The boundary and rail remain recognizable even when the label is outside the viewport. Additional source-date screenshots verify the longer completed MP workout on 6 October and Easy / Aerobic Base workout on 8 October, including full notes and supporting fields. Screenshots were captured in both Chromium and WebKit.
 
 Light-mode Today label contrast is 4.91:1 on #FBFCF7; secondary text is 4.90:1. Dark-mode label contrast is 15.29:1 on #141713; secondary text is 7.05:1. All existing source reconciliation, responsive, theme and offline checks pass: 19 source/derivation tests and 28 production browser tests. The workbook, parser, contract and generated data remain unchanged, with all 462 cells represented and Fueling Plan excluded. Physical iPhone testing remains outside the verified checks.
+
+## Edge-based Today and semantic accent audit — 7 October 2026
+
+Today now uses square edges, no top/right/bottom outline, no rounded corners and no shadow. The continuous 4px left rail and subtle surface establish the section boundary. Existing spacing, TODAY/date/phase hierarchy, strong Run typography and all secondary source fields remain unchanged. The initial review uses no extra top/bottom separators.
+
+| Semantic token | Light | Dark | Uses |
+| --- | --- | --- | --- |
+| accent-primary | #709600 | #C8FF00 | Small Today indicator, selected chart point |
+| accent-text | #587900 | #C8FF00 | Today label, countdown, next key values, active navigation text, distances, selected chart reading, Guardrails values, theme symbol |
+| accent-rail | #789A18 | #B6DE32 | Today edge, active navigation icon, selected date underline, selected roadmap edge |
+| accent-border | rgba(88,121,0,.24) | rgba(200,255,0,.22) | Current week and race separators |
+| accent-muted-bg | #FAFBF5 | #121511 | Today surface, selected chart date, active theme symbol surface |
+
+All UI green values are centralized in theme token definitions. Component rules contain no literal green values; the old universal accent-neon token and Today border token were removed. Both themes explicitly define every accent role. Text, structural accents and soft supporting surfaces use separate roles rather than one intensity.
+
+Light accent text measures 4.72:1 on the page, 4.86:1 on Today/selected surfaces and 5.06:1 on white. Light structural rail/icon contrast is 3.04:1 on the page and 3.14:1 on Today. Dark neon text is 16.00:1 on the page and 15.56:1 on Today. Secondary labels remain neutral and readable. Text labels, font weight, aria-current/aria-pressed and spatial structure continue to identify states without relying only on color.
+
+The production visual review passed for all three destinations in both themes at 430 × 932, Today entering/centered/leaving the viewport, longer MP/Easy source workouts, selected Long Run data and Guardrails pace values. All 19 source/derivation tests and 28 Chromium/WebKit browser checks passed, including responsive widths, system/manual theme behavior, source fidelity, accent contrast and offline checks. The production build passed with 16 precached resources. The source workbook, parser, generated data, Today logic, page components, read-only scope, navigation structure and deployment configuration have no changes. No gradients, glow, emoji, new icons/libraries, sticky elements or decorative animation were added.
