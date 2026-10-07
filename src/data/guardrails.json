@@ -1,0 +1,267 @@
+{
+  "sheet": "Guardrails",
+  "title": {
+    "address": "A1",
+    "value": "BS42 MASTER PLAN — GUARDRAILS",
+    "raw": "BS42 MASTER PLAN — GUARDRAILS",
+    "display": "BS42 MASTER PLAN — GUARDRAILS",
+    "format": "General"
+  },
+  "entries": [
+    {
+      "row": 2,
+      "title": {
+        "address": "A2",
+        "value": "Goal",
+        "raw": "Goal",
+        "display": "Goal",
+        "format": "General"
+      },
+      "text": {
+        "address": "B2",
+        "value": "Bangsaen42 — 15 Nov 2026 — Sub-4 (~5:41/km)",
+        "raw": "Bangsaen42 — 15 Nov 2026 — Sub-4 (~5:41/km)",
+        "display": "Bangsaen42 — 15 Nov 2026 — Sub-4 (~5:41/km)",
+        "format": "General"
+      }
+    },
+    {
+      "row": 3,
+      "title": {
+        "address": "A3",
+        "value": "Source of truth",
+        "raw": "Source of truth",
+        "display": "Source of truth",
+        "format": "General"
+      },
+      "text": {
+        "address": "B3",
+        "value": "MASTER PLAN controls structure. Garmin is telemetry / feedback only; do not follow recalculations automatically.",
+        "raw": "MASTER PLAN controls structure. Garmin is telemetry / feedback only; do not follow recalculations automatically.",
+        "display": "MASTER PLAN controls structure. Garmin is telemetry / feedback only; do not follow recalculations automatically.",
+        "format": "General"
+      }
+    },
+    {
+      "row": 4,
+      "title": {
+        "address": "A4",
+        "value": "Weekly baseline",
+        "raw": "Weekly baseline",
+        "display": "Weekly baseline",
+        "format": "General"
+      },
+      "text": {
+        "address": "B4",
+        "value": "Rest: Wed + Sun | Long Run: Sat | Running usually Mon/Tue/Thu/Fri/Sat",
+        "raw": "Rest: Wed + Sun | Long Run: Sat | Running usually Mon/Tue/Thu/Fri/Sat",
+        "display": "Rest: Wed + Sun | Long Run: Sat | Running usually Mon/Tue/Thu/Fri/Sat",
+        "format": "General"
+      }
+    },
+    {
+      "row": 5,
+      "title": {
+        "address": "A5",
+        "value": "Strength split",
+        "raw": "Strength split",
+        "display": "Strength split",
+        "format": "General"
+      },
+      "text": {
+        "address": "B5",
+        "value": "Mon Upper | Tue Lower+Core | Thu Full Body | Fri Chest+Core; reduce lower-body load as LR grows",
+        "raw": "Mon Upper | Tue Lower+Core | Thu Full Body | Fri Chest+Core; reduce lower-body load as LR grows",
+        "display": "Mon Upper | Tue Lower+Core | Thu Full Body | Fri Chest+Core; reduce lower-body load as LR grows",
+        "format": "General"
+      }
+    },
+    {
+      "row": 6,
+      "title": {
+        "address": "A6",
+        "value": "Priority order",
+        "raw": "Priority order",
+        "display": "Priority order",
+        "format": "General"
+      },
+      "text": {
+        "address": "B6",
+        "value": "1) Long Run  2) Aerobic volume  3) Marathon-specific / MP  4) Threshold / Speed",
+        "raw": "1) Long Run  2) Aerobic volume  3) Marathon-specific / MP  4) Threshold / Speed",
+        "display": "1) Long Run  2) Aerobic volume  3) Marathon-specific / MP  4) Threshold / Speed",
+        "format": "General"
+      }
+    },
+    {
+      "row": 7,
+      "title": {
+        "address": "A7",
+        "value": "Pace guide",
+        "raw": "Pace guide",
+        "display": "Pace guide",
+        "format": "General"
+      },
+      "text": {
+        "address": "B7",
+        "value": "Recovery 6:00–6:20 | Easy 5:50–6:10 | Aerobic Base 5:45–6:05 | MP 5:35–5:45 (goal ~5:41). Garmin 5:40 ≈ MP, not generic Easy.",
+        "raw": "Recovery 6:00–6:20 | Easy 5:50–6:10 | Aerobic Base 5:45–6:05 | MP 5:35–5:45 (goal ~5:41). Garmin 5:40 ≈ MP, not generic Easy.",
+        "display": "Recovery 6:00–6:20 | Easy 5:50–6:10 | Aerobic Base 5:45–6:05 | MP 5:35–5:45 (goal ~5:41). Garmin 5:40 ≈ MP, not generic Easy.",
+        "format": "General"
+      }
+    },
+    {
+      "row": 8,
+      "title": {
+        "address": "A8",
+        "value": "Threshold rule",
+        "raw": "Threshold rule",
+        "display": "Threshold rule",
+        "format": "General"
+      },
+      "text": {
+        "address": "B8",
+        "value": "No fixed obsession with 4:30/km. Max ~1 controlled quality session/week and only if it does not compromise LR.",
+        "raw": "No fixed obsession with 4:30/km. Max ~1 controlled quality session/week and only if it does not compromise LR.",
+        "display": "No fixed obsession with 4:30/km. Max ~1 controlled quality session/week and only if it does not compromise LR.",
+        "format": "General"
+      }
+    },
+    {
+      "row": 9,
+      "title": {
+        "address": "A9",
+        "value": "Post-rest stiffness rule",
+        "raw": "Post-rest stiffness rule",
+        "display": "Post-rest stiffness rule",
+        "format": "General"
+      },
+      "text": {
+        "address": "B9",
+        "value": "Warm-up is condition-based: 15–20 min easy + mobility/strides if needed before quality; downgrade if legs do not open.",
+        "raw": "Warm-up is condition-based: 15–20 min easy + mobility/strides if needed before quality; downgrade if legs do not open.",
+        "display": "Warm-up is condition-based: 15–20 min easy + mobility/strides if needed before quality; downgrade if legs do not open.",
+        "format": "General"
+      }
+    },
+    {
+      "row": 10,
+      "title": {
+        "address": "A10",
+        "value": "Long-run rule",
+        "raw": "Long-run rule",
+        "display": "Long-run rule",
+        "format": "General"
+      },
+      "text": {
+        "address": "B10",
+        "value": "Target ranges are guardrails, not debts. Stop at the planned stimulus; do not chase round numbers.",
+        "raw": "Target ranges are guardrails, not debts. Stop at the planned stimulus; do not chase round numbers.",
+        "display": "Target ranges are guardrails, not debts. Stop at the planned stimulus; do not chase round numbers.",
+        "format": "General"
+      }
+    },
+    {
+      "row": 11,
+      "title": {
+        "address": "A11",
+        "value": "Peak LR",
+        "raw": "Peak LR",
+        "display": "Peak LR",
+        "format": "General"
+      },
+      "text": {
+        "address": "B11",
+        "value": "24 Oct: target 24–26K; optional 27–28K only if every signal is green. No need to chase 30K.",
+        "raw": "24 Oct: target 24–26K; optional 27–28K only if every signal is green. No need to chase 30K.",
+        "display": "24 Oct: target 24–26K; optional 27–28K only if every signal is green. No need to chase 30K.",
+        "format": "General"
+      }
+    },
+    {
+      "row": 12,
+      "title": {
+        "address": "A12",
+        "value": "Cutback LR",
+        "raw": "Cutback LR",
+        "display": "Cutback LR",
+        "format": "General"
+      },
+      "text": {
+        "address": "B12",
+        "value": "31 Oct: 18–20K easy, then taper starts 1 Nov.",
+        "raw": "31 Oct: 18–20K easy, then taper starts 1 Nov.",
+        "display": "31 Oct: 18–20K easy, then taper starts 1 Nov.",
+        "format": "General"
+      }
+    },
+    {
+      "row": 13,
+      "title": {
+        "address": "A13",
+        "value": "Taper",
+        "raw": "Taper",
+        "display": "Taper",
+        "format": "General"
+      },
+      "text": {
+        "address": "B13",
+        "value": "1–14 Nov = 2 full weeks. First week volume ~35–45% below peak; race week lower again. Freshness is priority #1.",
+        "raw": "1–14 Nov = 2 full weeks. First week volume ~35–45% below peak; race week lower again. Freshness is priority #1.",
+        "display": "1–14 Nov = 2 full weeks. First week volume ~35–45% below peak; race week lower again. Freshness is priority #1.",
+        "format": "General"
+      }
+    },
+    {
+      "row": 14,
+      "title": {
+        "address": "A14",
+        "value": "Strength taper",
+        "raw": "Strength taper",
+        "display": "Strength taper",
+        "format": "General"
+      },
+      "text": {
+        "address": "B14",
+        "value": "No lower-body failure. During taper: maintenance only; race week no heavy Lower / Full Body.",
+        "raw": "No lower-body failure. During taper: maintenance only; race week no heavy Lower / Full Body.",
+        "display": "No lower-body failure. During taper: maintenance only; race week no heavy Lower / Full Body.",
+        "format": "General"
+      }
+    },
+    {
+      "row": 15,
+      "title": {
+        "address": "A15",
+        "value": "Fueling principle",
+        "raw": "Fueling principle",
+        "display": "Fueling principle",
+        "format": "General"
+      },
+      "text": {
+        "address": "B15",
+        "value": "Practice fueling on LR. For ~90+ min runs, build toward ~30–60 g carbohydrate/hour as tolerated.",
+        "raw": "Practice fueling on LR. For ~90+ min runs, build toward ~30–60 g carbohydrate/hour as tolerated.",
+        "display": "Practice fueling on LR. For ~90+ min runs, build toward ~30–60 g carbohydrate/hour as tolerated.",
+        "format": "General"
+      }
+    },
+    {
+      "row": 16,
+      "title": {
+        "address": "A16",
+        "value": "Safety / recovery",
+        "raw": "Safety / recovery",
+        "display": "Safety / recovery",
+        "format": "General"
+      },
+      "text": {
+        "address": "B16",
+        "value": "Downgrade or stop for persistent unusual heaviness, focal pain, abnormal breathing, illness symptoms, or recovery breakdown.",
+        "raw": "Downgrade or stop for persistent unusual heaviness, focal pain, abnormal breathing, illness symptoms, or recovery breakdown.",
+        "display": "Downgrade or stop for persistent unusual heaviness, focal pain, abnormal breathing, illness symptoms, or recovery breakdown.",
+        "format": "General"
+      }
+    }
+  ]
+}

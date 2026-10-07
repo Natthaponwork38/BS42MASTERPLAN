@@ -1,0 +1,695 @@
+{
+  "sheet": "Long Run Roadmap",
+  "headers": {
+    "Date": {
+      "address": "A1",
+      "value": "Date",
+      "raw": "Date",
+      "display": "Date",
+      "format": "General"
+    },
+    "Target Min (km)": {
+      "address": "B1",
+      "value": "Target Min (km)",
+      "raw": "Target Min (km)",
+      "display": "Target Min (km)",
+      "format": "General"
+    },
+    "Target Max (km)": {
+      "address": "C1",
+      "value": "Target Max (km)",
+      "raw": "Target Max (km)",
+      "display": "Target Max (km)",
+      "format": "General"
+    },
+    "Planning Midpoint (km)": {
+      "address": "D1",
+      "value": "Planning Midpoint (km)",
+      "raw": "Planning Midpoint (km)",
+      "display": "Planning Midpoint (km)",
+      "format": "General"
+    },
+    "Role": {
+      "address": "E1",
+      "value": "Role",
+      "raw": "Role",
+      "display": "Role",
+      "format": "General"
+    }
+  },
+  "entries": [
+    {
+      "row": 2,
+      "fields": {
+        "Date": {
+          "address": "A2",
+          "value": "2026-09-26",
+          "raw": 46291,
+          "display": "Sat, 26 Sep 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Target Min (km)": {
+          "address": "B2",
+          "value": 14.12,
+          "raw": 14.12,
+          "display": "14.12",
+          "format": "0.00"
+        },
+        "Target Max (km)": {
+          "address": "C2",
+          "value": 14.12,
+          "raw": 14.12,
+          "display": "14.12",
+          "format": "0.00"
+        },
+        "Planning Midpoint (km)": {
+          "address": "D2",
+          "value": 14.12,
+          "raw": 14.12,
+          "display": "14.12",
+          "format": "0.00",
+          "formula": "=(B2+C2)/2",
+          "cached": 14.12
+        },
+        "Role": {
+          "address": "E2",
+          "value": "Completed baseline LR",
+          "raw": "Completed baseline LR",
+          "display": "Completed baseline LR",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 3,
+      "fields": {
+        "Date": {
+          "address": "A3",
+          "value": "2026-10-03",
+          "raw": 46298,
+          "display": "Sat, 03 Oct 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Target Min (km)": {
+          "address": "B3",
+          "value": 10.02,
+          "raw": 10.02,
+          "display": "10.02",
+          "format": "0.00"
+        },
+        "Target Max (km)": {
+          "address": "C3",
+          "value": 10.02,
+          "raw": 10.02,
+          "display": "10.02",
+          "format": "0.00"
+        },
+        "Planning Midpoint (km)": {
+          "address": "D3",
+          "value": 10.02,
+          "raw": 10.02,
+          "display": "10.02",
+          "format": "0.00",
+          "formula": "=(B3+C3)/2",
+          "cached": 10.02
+        },
+        "Role": {
+          "address": "E3",
+          "value": "Reduced week — completed 10.02K; Thu 1 Oct was 14.28K aerobic",
+          "raw": "Reduced week — completed 10.02K; Thu 1 Oct was 14.28K aerobic",
+          "display": "Reduced week — completed 10.02K; Thu 1 Oct was 14.28K aerobic",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 4,
+      "fields": {
+        "Date": {
+          "address": "A4",
+          "value": "2026-10-10",
+          "raw": 46305,
+          "display": "Sat, 10 Oct 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Target Min (km)": {
+          "address": "B4",
+          "value": 17,
+          "raw": 17,
+          "display": "17.00",
+          "format": "0.00"
+        },
+        "Target Max (km)": {
+          "address": "C4",
+          "value": 18,
+          "raw": 18,
+          "display": "18.00",
+          "format": "0.00"
+        },
+        "Planning Midpoint (km)": {
+          "address": "D4",
+          "value": 17.5,
+          "raw": 17.5,
+          "display": "17.50",
+          "format": "0.00",
+          "formula": "=(B4+C4)/2",
+          "cached": 17.5
+        },
+        "Role": {
+          "address": "E4",
+          "value": "Rebuild LR + fueling rehearsal",
+          "raw": "Rebuild LR + fueling rehearsal",
+          "display": "Rebuild LR + fueling rehearsal",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 5,
+      "fields": {
+        "Date": {
+          "address": "A5",
+          "value": "2026-10-17",
+          "raw": 46312,
+          "display": "Sat, 17 Oct 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Target Min (km)": {
+          "address": "B5",
+          "value": 20,
+          "raw": 20,
+          "display": "20.00",
+          "format": "0.00"
+        },
+        "Target Max (km)": {
+          "address": "C5",
+          "value": 22,
+          "raw": 22,
+          "display": "22.00",
+          "format": "0.00"
+        },
+        "Planning Midpoint (km)": {
+          "address": "D5",
+          "value": 21,
+          "raw": 21,
+          "display": "21.00",
+          "format": "0.00",
+          "formula": "=(B5+C5)/2",
+          "cached": 21
+        },
+        "Role": {
+          "address": "E5",
+          "value": "Endurance + fueling",
+          "raw": "Endurance + fueling",
+          "display": "Endurance + fueling",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 6,
+      "fields": {
+        "Date": {
+          "address": "A6",
+          "value": "2026-10-24",
+          "raw": 46319,
+          "display": "Sat, 24 Oct 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Target Min (km)": {
+          "address": "B6",
+          "value": 24,
+          "raw": 24,
+          "display": "24.00",
+          "format": "0.00"
+        },
+        "Target Max (km)": {
+          "address": "C6",
+          "value": 26,
+          "raw": 26,
+          "display": "26.00",
+          "format": "0.00"
+        },
+        "Planning Midpoint (km)": {
+          "address": "D6",
+          "value": 25,
+          "raw": 25,
+          "display": "25.00",
+          "format": "0.00",
+          "formula": "=(B6+C6)/2",
+          "cached": 25
+        },
+        "Role": {
+          "address": "E6",
+          "value": "Peak LR; optional 27–28K only if all green",
+          "raw": "Peak LR; optional 27–28K only if all green",
+          "display": "Peak LR; optional 27–28K only if all green",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 7,
+      "fields": {
+        "Date": {
+          "address": "A7",
+          "value": "2026-10-31",
+          "raw": 46326,
+          "display": "Sat, 31 Oct 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Target Min (km)": {
+          "address": "B7",
+          "value": 18,
+          "raw": 18,
+          "display": "18.00",
+          "format": "0.00"
+        },
+        "Target Max (km)": {
+          "address": "C7",
+          "value": 20,
+          "raw": 20,
+          "display": "20.00",
+          "format": "0.00"
+        },
+        "Planning Midpoint (km)": {
+          "address": "D7",
+          "value": 19,
+          "raw": 19,
+          "display": "19.00",
+          "format": "0.00",
+          "formula": "=(B7+C7)/2",
+          "cached": 19
+        },
+        "Role": {
+          "address": "E7",
+          "value": "Cutback LR; enter 2-week taper fresh",
+          "raw": "Cutback LR; enter 2-week taper fresh",
+          "display": "Cutback LR; enter 2-week taper fresh",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 8,
+      "fields": {
+        "Date": {
+          "address": "A8",
+          "value": "2026-11-07",
+          "raw": 46333,
+          "display": "Sat, 07 Nov 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Target Min (km)": {
+          "address": "B8",
+          "value": 12,
+          "raw": 12,
+          "display": "12.00",
+          "format": "0.00"
+        },
+        "Target Max (km)": {
+          "address": "C8",
+          "value": 14,
+          "raw": 14,
+          "display": "14.00",
+          "format": "0.00"
+        },
+        "Planning Midpoint (km)": {
+          "address": "D8",
+          "value": 13,
+          "raw": 13,
+          "display": "13.00",
+          "format": "0.00",
+          "formula": "=(B8+C8)/2",
+          "cached": 13
+        },
+        "Role": {
+          "address": "E8",
+          "value": "Taper LR; easy only",
+          "raw": "Taper LR; easy only",
+          "display": "Taper LR; easy only",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 9,
+      "fields": {
+        "Date": {
+          "address": "A9",
+          "value": "2026-11-15",
+          "raw": 46341,
+          "display": "Sun, 15 Nov 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Target Min (km)": {
+          "address": "B9",
+          "value": 42.195,
+          "raw": 42.195,
+          "display": "42.20",
+          "format": "0.00"
+        },
+        "Target Max (km)": {
+          "address": "C9",
+          "value": 42.195,
+          "raw": 42.195,
+          "display": "42.20",
+          "format": "0.00"
+        },
+        "Planning Midpoint (km)": {
+          "address": "D9",
+          "value": 42.195,
+          "raw": 42.195,
+          "display": "42.20",
+          "format": "0.00",
+          "formula": "=(B9+C9)/2",
+          "cached": 42.195
+        },
+        "Role": {
+          "address": "E9",
+          "value": "Race day",
+          "raw": "Race day",
+          "display": "Race day",
+          "format": "General"
+        }
+      }
+    }
+  ],
+  "chart": {
+    "sheet": "Long Run Roadmap",
+    "headers": {
+      "Date": {
+        "address": "Q1",
+        "value": "Date",
+        "raw": "Date",
+        "display": "Date",
+        "format": "General"
+      },
+      "Min": {
+        "address": "R1",
+        "value": "Min",
+        "raw": "Min",
+        "display": "Min",
+        "format": "General"
+      },
+      "Max": {
+        "address": "S1",
+        "value": "Max",
+        "raw": "Max",
+        "display": "Max",
+        "format": "General"
+      },
+      "Mid": {
+        "address": "T1",
+        "value": "Mid",
+        "raw": "Mid",
+        "display": "Mid",
+        "format": "General"
+      }
+    },
+    "entries": [
+      {
+        "row": 2,
+        "fields": {
+          "Date": {
+            "address": "Q2",
+            "value": "26 Sep",
+            "raw": "26 Sep",
+            "display": "26 Sep",
+            "format": "General"
+          },
+          "Min": {
+            "address": "R2",
+            "value": 14.12,
+            "raw": 14.12,
+            "display": "14.12",
+            "format": "General"
+          },
+          "Max": {
+            "address": "S2",
+            "value": 14.12,
+            "raw": 14.12,
+            "display": "14.12",
+            "format": "General"
+          },
+          "Mid": {
+            "address": "T2",
+            "value": 14.12,
+            "raw": 14.12,
+            "display": "14.12",
+            "format": "General"
+          }
+        }
+      },
+      {
+        "row": 3,
+        "fields": {
+          "Date": {
+            "address": "Q3",
+            "value": "03 Oct",
+            "raw": "03 Oct",
+            "display": "03 Oct",
+            "format": "General"
+          },
+          "Min": {
+            "address": "R3",
+            "value": 10.02,
+            "raw": 10.02,
+            "display": "10.02",
+            "format": "General"
+          },
+          "Max": {
+            "address": "S3",
+            "value": 10.02,
+            "raw": 10.02,
+            "display": "10.02",
+            "format": "General"
+          },
+          "Mid": {
+            "address": "T3",
+            "value": 10.02,
+            "raw": 10.02,
+            "display": "10.02",
+            "format": "General"
+          }
+        }
+      },
+      {
+        "row": 4,
+        "fields": {
+          "Date": {
+            "address": "Q4",
+            "value": "10 Oct",
+            "raw": "10 Oct",
+            "display": "10 Oct",
+            "format": "General"
+          },
+          "Min": {
+            "address": "R4",
+            "value": 17,
+            "raw": 17,
+            "display": "17",
+            "format": "General"
+          },
+          "Max": {
+            "address": "S4",
+            "value": 18,
+            "raw": 18,
+            "display": "18",
+            "format": "General"
+          },
+          "Mid": {
+            "address": "T4",
+            "value": 17.5,
+            "raw": 17.5,
+            "display": "17.5",
+            "format": "General"
+          }
+        }
+      },
+      {
+        "row": 5,
+        "fields": {
+          "Date": {
+            "address": "Q5",
+            "value": "17 Oct",
+            "raw": "17 Oct",
+            "display": "17 Oct",
+            "format": "General"
+          },
+          "Min": {
+            "address": "R5",
+            "value": 20,
+            "raw": 20,
+            "display": "20",
+            "format": "General"
+          },
+          "Max": {
+            "address": "S5",
+            "value": 22,
+            "raw": 22,
+            "display": "22",
+            "format": "General"
+          },
+          "Mid": {
+            "address": "T5",
+            "value": 21,
+            "raw": 21,
+            "display": "21",
+            "format": "General"
+          }
+        }
+      },
+      {
+        "row": 6,
+        "fields": {
+          "Date": {
+            "address": "Q6",
+            "value": "24 Oct",
+            "raw": "24 Oct",
+            "display": "24 Oct",
+            "format": "General"
+          },
+          "Min": {
+            "address": "R6",
+            "value": 24,
+            "raw": 24,
+            "display": "24",
+            "format": "General"
+          },
+          "Max": {
+            "address": "S6",
+            "value": 26,
+            "raw": 26,
+            "display": "26",
+            "format": "General"
+          },
+          "Mid": {
+            "address": "T6",
+            "value": 25,
+            "raw": 25,
+            "display": "25",
+            "format": "General"
+          }
+        }
+      },
+      {
+        "row": 7,
+        "fields": {
+          "Date": {
+            "address": "Q7",
+            "value": "31 Oct",
+            "raw": "31 Oct",
+            "display": "31 Oct",
+            "format": "General"
+          },
+          "Min": {
+            "address": "R7",
+            "value": 18,
+            "raw": 18,
+            "display": "18",
+            "format": "General"
+          },
+          "Max": {
+            "address": "S7",
+            "value": 20,
+            "raw": 20,
+            "display": "20",
+            "format": "General"
+          },
+          "Mid": {
+            "address": "T7",
+            "value": 19,
+            "raw": 19,
+            "display": "19",
+            "format": "General"
+          }
+        }
+      },
+      {
+        "row": 8,
+        "fields": {
+          "Date": {
+            "address": "Q8",
+            "value": "07 Nov",
+            "raw": "07 Nov",
+            "display": "07 Nov",
+            "format": "General"
+          },
+          "Min": {
+            "address": "R8",
+            "value": 12,
+            "raw": 12,
+            "display": "12",
+            "format": "General"
+          },
+          "Max": {
+            "address": "S8",
+            "value": 14,
+            "raw": 14,
+            "display": "14",
+            "format": "General"
+          },
+          "Mid": {
+            "address": "T8",
+            "value": 13,
+            "raw": 13,
+            "display": "13",
+            "format": "General"
+          }
+        }
+      },
+      {
+        "row": 9,
+        "fields": {
+          "Date": {
+            "address": "Q9",
+            "value": "15 Nov",
+            "raw": "15 Nov",
+            "display": "15 Nov",
+            "format": "General"
+          },
+          "Min": {
+            "address": "R9",
+            "value": 42.195,
+            "raw": 42.195,
+            "display": "42.195",
+            "format": "General"
+          },
+          "Max": {
+            "address": "S9",
+            "value": 42.195,
+            "raw": 42.195,
+            "display": "42.195",
+            "format": "General"
+          },
+          "Mid": {
+            "address": "T9",
+            "value": 42.195,
+            "raw": 42.195,
+            "display": "42.195",
+            "format": "General"
+          }
+        }
+      }
+    ]
+  },
+  "chartTitle": "Long Run Progression to Bangsaen42",
+  "series": [
+    {
+      "name": "Min",
+      "categories": "'Long Run Roadmap'!$Q$2:$Q$9",
+      "values": "'Long Run Roadmap'!$R$2:$R$9"
+    },
+    {
+      "name": "Max",
+      "categories": "'Long Run Roadmap'!$Q$2:$Q$9",
+      "values": "'Long Run Roadmap'!$S$2:$S$9"
+    },
+    {
+      "name": "Mid",
+      "categories": "'Long Run Roadmap'!$Q$2:$Q$9",
+      "values": "'Long Run Roadmap'!$T$2:$T$9"
+    }
+  ]
+}

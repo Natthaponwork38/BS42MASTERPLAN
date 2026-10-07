@@ -1,0 +1,8 @@
+{
+  "workbook": "BS42_Master_Plan_2026_Updated_2026-10-06.xlsx",
+  "sheets": {
+    "BS42 Master Plan": { "records": 49, "nonEmptyCells": 350 },
+    "Long Run Roadmap": { "records": 8, "chartRecords": 8, "nonEmptyCells": 81 },
+    "Guardrails": { "records": 15, "nonEmptyCells": 31 }
+  }
+}

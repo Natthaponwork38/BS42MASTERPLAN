@@ -1,0 +1,2702 @@
+{
+  "sheet": "BS42 Master Plan",
+  "headers": {
+    "Date": {
+      "address": "A1",
+      "value": "Date",
+      "raw": "Date",
+      "display": "Date",
+      "format": "General"
+    },
+    "Day": {
+      "address": "B1",
+      "value": "Day",
+      "raw": "Day",
+      "display": "Day",
+      "format": "General"
+    },
+    "Phase": {
+      "address": "C1",
+      "value": "Phase",
+      "raw": "Phase",
+      "display": "Phase",
+      "format": "General"
+    },
+    "Run": {
+      "address": "D1",
+      "value": "Run",
+      "raw": "Run",
+      "display": "Run",
+      "format": "General"
+    },
+    "Strength": {
+      "address": "E1",
+      "value": "Strength",
+      "raw": "Strength",
+      "display": "Strength",
+      "format": "General"
+    },
+    "Priority / Purpose": {
+      "address": "F1",
+      "value": "Priority / Purpose",
+      "raw": "Priority / Purpose",
+      "display": "Priority / Purpose",
+      "format": "General"
+    },
+    "Status / Note": {
+      "address": "G1",
+      "value": "Status / Note",
+      "raw": "Status / Note",
+      "display": "Status / Note",
+      "format": "General"
+    }
+  },
+  "entries": [
+    {
+      "row": 2,
+      "fields": {
+        "Date": {
+          "address": "A2",
+          "value": "2026-09-28",
+          "raw": 46293,
+          "display": "Mon, 28 Sep 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B2",
+          "value": "Mon",
+          "raw": "Mon",
+          "display": "Mon",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C2",
+          "value": "Build → Peak",
+          "raw": "Build → Peak",
+          "display": "Build → Peak",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D2",
+          "value": "Threshold 4×6' @4:30 — stopped in Rep 4",
+          "raw": "Threshold 4×6' @4:30 — stopped in Rep 4",
+          "display": "Threshold 4×6' @4:30 — stopped in Rep 4",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E2",
+          "value": "Upper",
+          "raw": "Upper",
+          "display": "Upper",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F2",
+          "value": "Quality; no make-up",
+          "raw": "Quality; no make-up",
+          "display": "Quality; no make-up",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G2",
+          "value": "Completed — ~7.15K / 37:16 active; high fatigue",
+          "raw": "Completed — ~7.15K / 37:16 active; high fatigue",
+          "display": "Completed — ~7.15K / 37:16 active; high fatigue",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 3,
+      "fields": {
+        "Date": {
+          "address": "A3",
+          "value": "2026-09-29",
+          "raw": 46294,
+          "display": "Tue, 29 Sep 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B3",
+          "value": "Tue",
+          "raw": "Tue",
+          "display": "Tue",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C3",
+          "value": "Peak",
+          "raw": "Peak",
+          "display": "Peak",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D3",
+          "value": "Base 57' @5:40 — 10.08K",
+          "raw": "Base 57' @5:40 — 10.08K",
+          "display": "Base 57' @5:40 — 10.08K",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E3",
+          "value": "Lower + Core",
+          "raw": "Lower + Core",
+          "display": "Lower + Core",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F3",
+          "value": "Aerobic; internal cost high",
+          "raw": "Aerobic; internal cost high",
+          "display": "Aerobic; internal cost high",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G3",
+          "value": "Completed — 57:01 / HR153 / TE3.8; felt unusually hard",
+          "raw": "Completed — 57:01 / HR153 / TE3.8; felt unusually hard",
+          "display": "Completed — 57:01 / HR153 / TE3.8; felt unusually hard",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 4,
+      "fields": {
+        "Date": {
+          "address": "A4",
+          "value": "2026-09-30",
+          "raw": 46295,
+          "display": "Wed, 30 Sep 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B4",
+          "value": "Wed",
+          "raw": "Wed",
+          "display": "Wed",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C4",
+          "value": "Peak",
+          "raw": "Peak",
+          "display": "Peak",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D4",
+          "value": "REST",
+          "raw": "REST",
+          "display": "REST",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E4",
+          "value": "REST",
+          "raw": "REST",
+          "display": "REST",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F4",
+          "value": "Recovery",
+          "raw": "Recovery",
+          "display": "Recovery",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G4",
+          "value": "Completed",
+          "raw": "Completed",
+          "display": "Completed",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 5,
+      "fields": {
+        "Date": {
+          "address": "A5",
+          "value": "2026-10-01",
+          "raw": 46296,
+          "display": "Thu, 01 Oct 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B5",
+          "value": "Thu",
+          "raw": "Thu",
+          "display": "Thu",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C5",
+          "value": "Peak",
+          "raw": "Peak",
+          "display": "Peak",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D5",
+          "value": "Base 81' @~5:41 — 14.28K",
+          "raw": "Base 81' @~5:41 — 14.28K",
+          "display": "Base 81' @~5:41 — 14.28K",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E5",
+          "value": "Full Body",
+          "raw": "Full Body",
+          "display": "Full Body",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F5",
+          "value": "Long aerobic / recovery check",
+          "raw": "Long aerobic / recovery check",
+          "display": "Long aerobic / recovery check",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G5",
+          "value": "Completed — 1:21:03 / HR150 / TE4.0; comfortable, late energy fade",
+          "raw": "Completed — 1:21:03 / HR150 / TE4.0; comfortable, late energy fade",
+          "display": "Completed — 1:21:03 / HR150 / TE4.0; comfortable, late energy fade",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 6,
+      "fields": {
+        "Date": {
+          "address": "A6",
+          "value": "2026-10-02",
+          "raw": 46297,
+          "display": "Fri, 02 Oct 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B6",
+          "value": "Fri",
+          "raw": "Fri",
+          "display": "Fri",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C6",
+          "value": "Peak",
+          "raw": "Peak",
+          "display": "Peak",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D6",
+          "value": "REST",
+          "raw": "REST",
+          "display": "REST",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E6",
+          "value": "Skipped",
+          "raw": "Skipped",
+          "display": "Skipped",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F6",
+          "value": "Recovery after poor sleep",
+          "raw": "Recovery after poor sleep",
+          "display": "Recovery after poor sleep",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G6",
+          "value": "Completed — sleep poor; no run / no strength",
+          "raw": "Completed — sleep poor; no run / no strength",
+          "display": "Completed — sleep poor; no run / no strength",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 7,
+      "fields": {
+        "Date": {
+          "address": "A7",
+          "value": "2026-10-03",
+          "raw": 46298,
+          "display": "Sat, 03 Oct 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B7",
+          "value": "Sat",
+          "raw": "Sat",
+          "display": "Sat",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C7",
+          "value": "Peak",
+          "raw": "Peak",
+          "display": "Peak",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D7",
+          "value": "Base 52' → 10.02K @5:39",
+          "raw": "Base 52' → 10.02K @5:39",
+          "display": "Base 52' → 10.02K @5:39",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E7",
+          "value": "Upper-focused Full Body + Lower maintenance",
+          "raw": "Upper-focused Full Body + Lower maintenance",
+          "display": "Upper-focused Full Body + Lower maintenance",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F7",
+          "value": "Aerobic + light strength",
+          "raw": "Aerobic + light strength",
+          "display": "Aerobic + light strength",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G7",
+          "value": "Completed — 56:34 / HR147 / TE3.6; hot 31–33°C",
+          "raw": "Completed — 56:34 / HR147 / TE3.6; hot 31–33°C",
+          "display": "Completed — 56:34 / HR147 / TE3.6; hot 31–33°C",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 8,
+      "fields": {
+        "Date": {
+          "address": "A8",
+          "value": "2026-10-04",
+          "raw": 46299,
+          "display": "Sun, 04 Oct 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B8",
+          "value": "Sun",
+          "raw": "Sun",
+          "display": "Sun",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C8",
+          "value": "Peak",
+          "raw": "Peak",
+          "display": "Peak",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D8",
+          "value": "REST",
+          "raw": "REST",
+          "display": "REST",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E8",
+          "value": "REST",
+          "raw": "REST",
+          "display": "REST",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F8",
+          "value": "Recovery",
+          "raw": "Recovery",
+          "display": "Recovery",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G8",
+          "value": "Completed",
+          "raw": "Completed",
+          "display": "Completed",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 9,
+      "fields": {
+        "Date": {
+          "address": "A9",
+          "value": "2026-10-05",
+          "raw": 46300,
+          "display": "Mon, 05 Oct 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B9",
+          "value": "Mon",
+          "raw": "Mon",
+          "display": "Mon",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C9",
+          "value": "Peak",
+          "raw": "Peak",
+          "display": "Peak",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D9",
+          "value": "Threshold 35' — 15' target @4:30; actual ~4:56 with pause",
+          "raw": "Threshold 35' — 15' target @4:30; actual ~4:56 with pause",
+          "display": "Threshold 35' — 15' target @4:30; actual ~4:56 with pause",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E9",
+          "value": "Upper",
+          "raw": "Upper",
+          "display": "Upper",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F9",
+          "value": "Quality attempt; do not chase 4:30",
+          "raw": "Quality attempt; do not chase 4:30",
+          "display": "Quality attempt; do not chase 4:30",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G9",
+          "value": "Completed — 6.48K / 35:02 active; calf tightness + hot/humid",
+          "raw": "Completed — 6.48K / 35:02 active; calf tightness + hot/humid",
+          "display": "Completed — 6.48K / 35:02 active; calf tightness + hot/humid",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 10,
+      "fields": {
+        "Date": {
+          "address": "A10",
+          "value": "2026-10-06",
+          "raw": 46301,
+          "display": "Tue, 06 Oct 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B10",
+          "value": "Tue",
+          "raw": "Tue",
+          "display": "Tue",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C10",
+          "value": "Peak",
+          "raw": "Peak",
+          "display": "Peak",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D10",
+          "value": "MP 51' — 9.01K @5:42",
+          "raw": "MP 51' — 9.01K @5:42",
+          "display": "MP 51' — 9.01K @5:42",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E10",
+          "value": "Lower + Core — deliberate deload",
+          "raw": "Lower + Core — deliberate deload",
+          "display": "Lower + Core — deliberate deload",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F10",
+          "value": "Marathon-pace exposure",
+          "raw": "Marathon-pace exposure",
+          "display": "Marathon-pace exposure",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G10",
+          "value": "Completed — 51:25 / HR142 / TE3.4; enjoyable, mechanics stable",
+          "raw": "Completed — 51:25 / HR142 / TE3.4; enjoyable, mechanics stable",
+          "display": "Completed — 51:25 / HR142 / TE3.4; enjoyable, mechanics stable",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 11,
+      "fields": {
+        "Date": {
+          "address": "A11",
+          "value": "2026-10-07",
+          "raw": 46302,
+          "display": "Wed, 07 Oct 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B11",
+          "value": "Wed",
+          "raw": "Wed",
+          "display": "Wed",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C11",
+          "value": "Peak",
+          "raw": "Peak",
+          "display": "Peak",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D11",
+          "value": "REST",
+          "raw": "REST",
+          "display": "REST",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E11",
+          "value": "REST",
+          "raw": "REST",
+          "display": "REST",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F11",
+          "value": "Recovery",
+          "raw": "Recovery",
+          "display": "Recovery",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G11",
+          "value": "Planned",
+          "raw": "Planned",
+          "display": "Planned",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 12,
+      "fields": {
+        "Date": {
+          "address": "A12",
+          "value": "2026-10-08",
+          "raw": 46303,
+          "display": "Thu, 08 Oct 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B12",
+          "value": "Thu",
+          "raw": "Thu",
+          "display": "Thu",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C12",
+          "value": "Peak",
+          "raw": "Peak",
+          "display": "Peak",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D12",
+          "value": "Easy / Aerobic Base 40–45' @5:50–6:10",
+          "raw": "Easy / Aerobic Base 40–45' @5:50–6:10",
+          "display": "Easy / Aerobic Base 40–45' @5:50–6:10",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E12",
+          "value": "Full Body — light; lower reduced",
+          "raw": "Full Body — light; lower reduced",
+          "display": "Full Body — light; lower reduced",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F12",
+          "value": "Recover + aerobic maintenance",
+          "raw": "Recover + aerobic maintenance",
+          "display": "Recover + aerobic maintenance",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G12",
+          "value": "Planned — no MP needed after Tue",
+          "raw": "Planned — no MP needed after Tue",
+          "display": "Planned — no MP needed after Tue",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 13,
+      "fields": {
+        "Date": {
+          "address": "A13",
+          "value": "2026-10-09",
+          "raw": 46304,
+          "display": "Fri, 09 Oct 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B13",
+          "value": "Fri",
+          "raw": "Fri",
+          "display": "Fri",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C13",
+          "value": "Peak",
+          "raw": "Peak",
+          "display": "Peak",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D13",
+          "value": "Recovery 20–30' @6:00–6:20",
+          "raw": "Recovery 20–30' @6:00–6:20",
+          "display": "Recovery 20–30' @6:00–6:20",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E13",
+          "value": "Chest + Core — light",
+          "raw": "Chest + Core — light",
+          "display": "Chest + Core — light",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F13",
+          "value": "Open legs for Saturday LR",
+          "raw": "Open legs for Saturday LR",
+          "display": "Open legs for Saturday LR",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G13",
+          "value": "Optional if DOMS/fatigue is clear",
+          "raw": "Optional if DOMS/fatigue is clear",
+          "display": "Optional if DOMS/fatigue is clear",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 14,
+      "fields": {
+        "Date": {
+          "address": "A14",
+          "value": "2026-10-10",
+          "raw": 46305,
+          "display": "Sat, 10 Oct 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B14",
+          "value": "Sat",
+          "raw": "Sat",
+          "display": "Sat",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C14",
+          "value": "Peak",
+          "raw": "Peak",
+          "display": "Peak",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D14",
+          "value": "LONG RUN 17–18K @5:50–6:10",
+          "raw": "LONG RUN 17–18K @5:50–6:10",
+          "display": "LONG RUN 17–18K @5:50–6:10",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E14",
+          "value": "—",
+          "raw": "—",
+          "display": "—",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F14",
+          "value": "Endurance + durability + fueling",
+          "raw": "Endurance + durability + fueling",
+          "display": "Endurance + durability + fueling",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G14",
+          "value": "Key session — 18K target; 19K only if all green",
+          "raw": "Key session — 18K target; 19K only if all green",
+          "display": "Key session — 18K target; 19K only if all green",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 15,
+      "fields": {
+        "Date": {
+          "address": "A15",
+          "value": "2026-10-11",
+          "raw": 46306,
+          "display": "Sun, 11 Oct 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B15",
+          "value": "Sun",
+          "raw": "Sun",
+          "display": "Sun",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C15",
+          "value": "Peak",
+          "raw": "Peak",
+          "display": "Peak",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D15",
+          "value": "REST",
+          "raw": "REST",
+          "display": "REST",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E15",
+          "value": "REST",
+          "raw": "REST",
+          "display": "REST",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F15",
+          "value": "Recovery",
+          "raw": "Recovery",
+          "display": "Recovery",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G15",
+          "value": "Planned",
+          "raw": "Planned",
+          "display": "Planned",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 16,
+      "fields": {
+        "Date": {
+          "address": "A16",
+          "value": "2026-10-12",
+          "raw": 46307,
+          "display": "Mon, 12 Oct 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B16",
+          "value": "Mon",
+          "raw": "Mon",
+          "display": "Mon",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C16",
+          "value": "Peak",
+          "raw": "Peak",
+          "display": "Peak",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D16",
+          "value": "Easy 35–45' @5:50–6:10 + optional 4×20s strides",
+          "raw": "Easy 35–45' @5:50–6:10 + optional 4×20s strides",
+          "display": "Easy 35–45' @5:50–6:10 + optional 4×20s strides",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E16",
+          "value": "Upper",
+          "raw": "Upper",
+          "display": "Upper",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F16",
+          "value": "Aerobic recovery; keep legs awake",
+          "raw": "Aerobic recovery; keep legs awake",
+          "display": "Aerobic recovery; keep legs awake",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G16",
+          "value": "No hard threshold",
+          "raw": "No hard threshold",
+          "display": "No hard threshold",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 17,
+      "fields": {
+        "Date": {
+          "address": "A17",
+          "value": "2026-10-13",
+          "raw": 46308,
+          "display": "Tue, 13 Oct 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B17",
+          "value": "Tue",
+          "raw": "Tue",
+          "display": "Tue",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C17",
+          "value": "Peak",
+          "raw": "Peak",
+          "display": "Peak",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D17",
+          "value": "Easy / Base 35–45' @5:50–6:10",
+          "raw": "Easy / Base 35–45' @5:50–6:10",
+          "display": "Easy / Base 35–45' @5:50–6:10",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E17",
+          "value": "Lower + Core ↓",
+          "raw": "Lower + Core ↓",
+          "display": "Lower + Core ↓",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F17",
+          "value": "Aerobic; strength maintenance",
+          "raw": "Aerobic; strength maintenance",
+          "display": "Aerobic; strength maintenance",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G17",
+          "value": "Keep lower-body load controlled",
+          "raw": "Keep lower-body load controlled",
+          "display": "Keep lower-body load controlled",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 18,
+      "fields": {
+        "Date": {
+          "address": "A18",
+          "value": "2026-10-14",
+          "raw": 46309,
+          "display": "Wed, 14 Oct 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B18",
+          "value": "Wed",
+          "raw": "Wed",
+          "display": "Wed",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C18",
+          "value": "Peak",
+          "raw": "Peak",
+          "display": "Peak",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D18",
+          "value": "REST",
+          "raw": "REST",
+          "display": "REST",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E18",
+          "value": "REST",
+          "raw": "REST",
+          "display": "REST",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F18",
+          "value": "Recovery",
+          "raw": "Recovery",
+          "display": "Recovery",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G18",
+          "value": "Planned",
+          "raw": "Planned",
+          "display": "Planned",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 19,
+      "fields": {
+        "Date": {
+          "address": "A19",
+          "value": "2026-10-15",
+          "raw": 46310,
+          "display": "Thu, 15 Oct 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B19",
+          "value": "Thu",
+          "raw": "Thu",
+          "display": "Thu",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C19",
+          "value": "Peak",
+          "raw": "Peak",
+          "display": "Peak",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D19",
+          "value": "15' Easy + 20–25' MP @5:35–5:45 + 10–15' Easy",
+          "raw": "15' Easy + 20–25' MP @5:35–5:45 + 10–15' Easy",
+          "display": "15' Easy + 20–25' MP @5:35–5:45 + 10–15' Easy",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E19",
+          "value": "Full Body ↓",
+          "raw": "Full Body ↓",
+          "display": "Full Body ↓",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F19",
+          "value": "Marathon-specific quality",
+          "raw": "Marathon-specific quality",
+          "display": "Marathon-specific quality",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G19",
+          "value": "1 controlled quality session",
+          "raw": "1 controlled quality session",
+          "display": "1 controlled quality session",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 20,
+      "fields": {
+        "Date": {
+          "address": "A20",
+          "value": "2026-10-16",
+          "raw": 46311,
+          "display": "Fri, 16 Oct 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B20",
+          "value": "Fri",
+          "raw": "Fri",
+          "display": "Fri",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C20",
+          "value": "Peak",
+          "raw": "Peak",
+          "display": "Peak",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D20",
+          "value": "Recovery 20–30' @6:00–6:20",
+          "raw": "Recovery 20–30' @6:00–6:20",
+          "display": "Recovery 20–30' @6:00–6:20",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E20",
+          "value": "Chest + Core — light",
+          "raw": "Chest + Core — light",
+          "display": "Chest + Core — light",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F20",
+          "value": "Fresh legs",
+          "raw": "Fresh legs",
+          "display": "Fresh legs",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G20",
+          "value": "Cut if fatigue is elevated",
+          "raw": "Cut if fatigue is elevated",
+          "display": "Cut if fatigue is elevated",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 21,
+      "fields": {
+        "Date": {
+          "address": "A21",
+          "value": "2026-10-17",
+          "raw": 46312,
+          "display": "Sat, 17 Oct 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B21",
+          "value": "Sat",
+          "raw": "Sat",
+          "display": "Sat",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C21",
+          "value": "Peak",
+          "raw": "Peak",
+          "display": "Peak",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D21",
+          "value": "LONG RUN 20–22K @5:50–6:10",
+          "raw": "LONG RUN 20–22K @5:50–6:10",
+          "display": "LONG RUN 20–22K @5:50–6:10",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E21",
+          "value": "—",
+          "raw": "—",
+          "display": "—",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F21",
+          "value": "Endurance + fueling",
+          "raw": "Endurance + fueling",
+          "display": "Endurance + fueling",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G21",
+          "value": "Optional last 3–4K @5:40–5:50 only if all green",
+          "raw": "Optional last 3–4K @5:40–5:50 only if all green",
+          "display": "Optional last 3–4K @5:40–5:50 only if all green",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 22,
+      "fields": {
+        "Date": {
+          "address": "A22",
+          "value": "2026-10-18",
+          "raw": 46313,
+          "display": "Sun, 18 Oct 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B22",
+          "value": "Sun",
+          "raw": "Sun",
+          "display": "Sun",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C22",
+          "value": "Peak",
+          "raw": "Peak",
+          "display": "Peak",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D22",
+          "value": "REST",
+          "raw": "REST",
+          "display": "REST",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E22",
+          "value": "REST",
+          "raw": "REST",
+          "display": "REST",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F22",
+          "value": "Recovery",
+          "raw": "Recovery",
+          "display": "Recovery",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G22",
+          "value": "Planned",
+          "raw": "Planned",
+          "display": "Planned",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 23,
+      "fields": {
+        "Date": {
+          "address": "A23",
+          "value": "2026-10-19",
+          "raw": 46314,
+          "display": "Mon, 19 Oct 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B23",
+          "value": "Mon",
+          "raw": "Mon",
+          "display": "Mon",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C23",
+          "value": "Peak",
+          "raw": "Peak",
+          "display": "Peak",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D23",
+          "value": "Easy 35–45' @5:50–6:10",
+          "raw": "Easy 35–45' @5:50–6:10",
+          "display": "Easy 35–45' @5:50–6:10",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E23",
+          "value": "Upper ↓",
+          "raw": "Upper ↓",
+          "display": "Upper ↓",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F23",
+          "value": "Recover from LR",
+          "raw": "Recover from LR",
+          "display": "Recover from LR",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G23",
+          "value": "No need to force quality",
+          "raw": "No need to force quality",
+          "display": "No need to force quality",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 24,
+      "fields": {
+        "Date": {
+          "address": "A24",
+          "value": "2026-10-20",
+          "raw": 46315,
+          "display": "Tue, 20 Oct 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B24",
+          "value": "Tue",
+          "raw": "Tue",
+          "display": "Tue",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C24",
+          "value": "Peak",
+          "raw": "Peak",
+          "display": "Peak",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D24",
+          "value": "Easy / Base 35–45' @5:50–6:10",
+          "raw": "Easy / Base 35–45' @5:50–6:10",
+          "display": "Easy / Base 35–45' @5:50–6:10",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E24",
+          "value": "Lower + Core ↓↓",
+          "raw": "Lower + Core ↓↓",
+          "display": "Lower + Core ↓↓",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F24",
+          "value": "Aerobic + maintain strength",
+          "raw": "Aerobic + maintain strength",
+          "display": "Aerobic + maintain strength",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G24",
+          "value": "Avoid failure",
+          "raw": "Avoid failure",
+          "display": "Avoid failure",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 25,
+      "fields": {
+        "Date": {
+          "address": "A25",
+          "value": "2026-10-21",
+          "raw": 46316,
+          "display": "Wed, 21 Oct 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B25",
+          "value": "Wed",
+          "raw": "Wed",
+          "display": "Wed",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C25",
+          "value": "Peak",
+          "raw": "Peak",
+          "display": "Peak",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D25",
+          "value": "REST",
+          "raw": "REST",
+          "display": "REST",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E25",
+          "value": "REST",
+          "raw": "REST",
+          "display": "REST",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F25",
+          "value": "Recovery",
+          "raw": "Recovery",
+          "display": "Recovery",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G25",
+          "value": "Planned",
+          "raw": "Planned",
+          "display": "Planned",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 26,
+      "fields": {
+        "Date": {
+          "address": "A26",
+          "value": "2026-10-22",
+          "raw": 46317,
+          "display": "Thu, 22 Oct 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B26",
+          "value": "Thu",
+          "raw": "Thu",
+          "display": "Thu",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C26",
+          "value": "Peak",
+          "raw": "Peak",
+          "display": "Peak",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D26",
+          "value": "Easy 15' + MP 15–20' @5:35–5:45 + Easy 15'",
+          "raw": "Easy 15' + MP 15–20' @5:35–5:45 + Easy 15'",
+          "display": "Easy 15' + MP 15–20' @5:35–5:45 + Easy 15'",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E26",
+          "value": "Full Body ↓↓",
+          "raw": "Full Body ↓↓",
+          "display": "Full Body ↓↓",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F26",
+          "value": "Race rhythm without excess fatigue",
+          "raw": "Race rhythm without excess fatigue",
+          "display": "Race rhythm without excess fatigue",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G26",
+          "value": "Protect peak LR",
+          "raw": "Protect peak LR",
+          "display": "Protect peak LR",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 27,
+      "fields": {
+        "Date": {
+          "address": "A27",
+          "value": "2026-10-23",
+          "raw": 46318,
+          "display": "Fri, 23 Oct 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B27",
+          "value": "Fri",
+          "raw": "Fri",
+          "display": "Fri",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C27",
+          "value": "Peak",
+          "raw": "Peak",
+          "display": "Peak",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D27",
+          "value": "Very Easy / Recovery 20–25' @6:00–6:20",
+          "raw": "Very Easy / Recovery 20–25' @6:00–6:20",
+          "display": "Very Easy / Recovery 20–25' @6:00–6:20",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E27",
+          "value": "Chest + Core ↓",
+          "raw": "Chest + Core ↓",
+          "display": "Chest + Core ↓",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F27",
+          "value": "Fresh legs",
+          "raw": "Fresh legs",
+          "display": "Fresh legs",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G27",
+          "value": "Short and easy",
+          "raw": "Short and easy",
+          "display": "Short and easy",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 28,
+      "fields": {
+        "Date": {
+          "address": "A28",
+          "value": "2026-10-24",
+          "raw": 46319,
+          "display": "Sat, 24 Oct 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B28",
+          "value": "Sat",
+          "raw": "Sat",
+          "display": "Sat",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C28",
+          "value": "Peak",
+          "raw": "Peak",
+          "display": "Peak",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D28",
+          "value": "PEAK LONG RUN 24–26K @5:50–6:10",
+          "raw": "PEAK LONG RUN 24–26K @5:50–6:10",
+          "display": "PEAK LONG RUN 24–26K @5:50–6:10",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E28",
+          "value": "—",
+          "raw": "—",
+          "display": "—",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F28",
+          "value": "Peak endurance + full fueling rehearsal",
+          "raw": "Peak endurance + full fueling rehearsal",
+          "display": "Peak endurance + full fueling rehearsal",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G28",
+          "value": "Optional 27–28K only if every signal is green",
+          "raw": "Optional 27–28K only if every signal is green",
+          "display": "Optional 27–28K only if every signal is green",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 29,
+      "fields": {
+        "Date": {
+          "address": "A29",
+          "value": "2026-10-25",
+          "raw": 46320,
+          "display": "Sun, 25 Oct 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B29",
+          "value": "Sun",
+          "raw": "Sun",
+          "display": "Sun",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C29",
+          "value": "Peak",
+          "raw": "Peak",
+          "display": "Peak",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D29",
+          "value": "REST",
+          "raw": "REST",
+          "display": "REST",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E29",
+          "value": "REST",
+          "raw": "REST",
+          "display": "REST",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F29",
+          "value": "Recovery",
+          "raw": "Recovery",
+          "display": "Recovery",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G29",
+          "value": "Planned",
+          "raw": "Planned",
+          "display": "Planned",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 30,
+      "fields": {
+        "Date": {
+          "address": "A30",
+          "value": "2026-10-26",
+          "raw": 46321,
+          "display": "Mon, 26 Oct 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B30",
+          "value": "Mon",
+          "raw": "Mon",
+          "display": "Mon",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C30",
+          "value": "Peak",
+          "raw": "Peak",
+          "display": "Peak",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D30",
+          "value": "Easy 30–40' @5:55–6:15",
+          "raw": "Easy 30–40' @5:55–6:15",
+          "display": "Easy 30–40' @5:55–6:15",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E30",
+          "value": "Upper ↓",
+          "raw": "Upper ↓",
+          "display": "Upper ↓",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F30",
+          "value": "Unload after peak LR",
+          "raw": "Unload after peak LR",
+          "display": "Unload after peak LR",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G30",
+          "value": "Recovery first",
+          "raw": "Recovery first",
+          "display": "Recovery first",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 31,
+      "fields": {
+        "Date": {
+          "address": "A31",
+          "value": "2026-10-27",
+          "raw": 46322,
+          "display": "Tue, 27 Oct 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B31",
+          "value": "Tue",
+          "raw": "Tue",
+          "display": "Tue",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C31",
+          "value": "Peak",
+          "raw": "Peak",
+          "display": "Peak",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D31",
+          "value": "Easy 30–40' @5:55–6:15",
+          "raw": "Easy 30–40' @5:55–6:15",
+          "display": "Easy 30–40' @5:55–6:15",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E31",
+          "value": "Lower + Core — very light",
+          "raw": "Lower + Core — very light",
+          "display": "Lower + Core — very light",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F31",
+          "value": "Maintain only",
+          "raw": "Maintain only",
+          "display": "Maintain only",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G31",
+          "value": "No DOMS goal",
+          "raw": "No DOMS goal",
+          "display": "No DOMS goal",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 32,
+      "fields": {
+        "Date": {
+          "address": "A32",
+          "value": "2026-10-28",
+          "raw": 46323,
+          "display": "Wed, 28 Oct 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B32",
+          "value": "Wed",
+          "raw": "Wed",
+          "display": "Wed",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C32",
+          "value": "Peak",
+          "raw": "Peak",
+          "display": "Peak",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D32",
+          "value": "REST",
+          "raw": "REST",
+          "display": "REST",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E32",
+          "value": "REST",
+          "raw": "REST",
+          "display": "REST",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F32",
+          "value": "Recovery",
+          "raw": "Recovery",
+          "display": "Recovery",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G32",
+          "value": "Planned",
+          "raw": "Planned",
+          "display": "Planned",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 33,
+      "fields": {
+        "Date": {
+          "address": "A33",
+          "value": "2026-10-29",
+          "raw": 46324,
+          "display": "Thu, 29 Oct 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B33",
+          "value": "Thu",
+          "raw": "Thu",
+          "display": "Thu",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C33",
+          "value": "Peak",
+          "raw": "Peak",
+          "display": "Peak",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D33",
+          "value": "Easy 35–45' + 10–15' MP max if fresh",
+          "raw": "Easy 35–45' + 10–15' MP max if fresh",
+          "display": "Easy 35–45' + 10–15' MP max if fresh",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E33",
+          "value": "Full Body — very light",
+          "raw": "Full Body — very light",
+          "display": "Full Body — very light",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F33",
+          "value": "Small race-specific touch",
+          "raw": "Small race-specific touch",
+          "display": "Small race-specific touch",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G33",
+          "value": "Skip MP if legs are not fresh",
+          "raw": "Skip MP if legs are not fresh",
+          "display": "Skip MP if legs are not fresh",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 34,
+      "fields": {
+        "Date": {
+          "address": "A34",
+          "value": "2026-10-30",
+          "raw": 46325,
+          "display": "Fri, 30 Oct 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B34",
+          "value": "Fri",
+          "raw": "Fri",
+          "display": "Fri",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C34",
+          "value": "Peak",
+          "raw": "Peak",
+          "display": "Peak",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D34",
+          "value": "Very Easy 20–25' @6:00–6:20",
+          "raw": "Very Easy 20–25' @6:00–6:20",
+          "display": "Very Easy 20–25' @6:00–6:20",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E34",
+          "value": "Chest + Core ↓",
+          "raw": "Chest + Core ↓",
+          "display": "Chest + Core ↓",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F34",
+          "value": "Fresh legs",
+          "raw": "Fresh legs",
+          "display": "Fresh legs",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G34",
+          "value": "Short",
+          "raw": "Short",
+          "display": "Short",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 35,
+      "fields": {
+        "Date": {
+          "address": "A35",
+          "value": "2026-10-31",
+          "raw": 46326,
+          "display": "Sat, 31 Oct 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B35",
+          "value": "Sat",
+          "raw": "Sat",
+          "display": "Sat",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C35",
+          "value": "Peak",
+          "raw": "Peak",
+          "display": "Peak",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D35",
+          "value": "CUTBACK LONG RUN 18–20K Easy @5:55–6:15",
+          "raw": "CUTBACK LONG RUN 18–20K Easy @5:55–6:15",
+          "display": "CUTBACK LONG RUN 18–20K Easy @5:55–6:15",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E35",
+          "value": "—",
+          "raw": "—",
+          "display": "—",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F35",
+          "value": "Consolidate fitness; enter taper fresh",
+          "raw": "Consolidate fitness; enter taper fresh",
+          "display": "Consolidate fitness; enter taper fresh",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G35",
+          "value": "No distance chasing",
+          "raw": "No distance chasing",
+          "display": "No distance chasing",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 36,
+      "fields": {
+        "Date": {
+          "address": "A36",
+          "value": "2026-11-01",
+          "raw": 46327,
+          "display": "Sun, 01 Nov 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B36",
+          "value": "Sun",
+          "raw": "Sun",
+          "display": "Sun",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C36",
+          "value": "Taper",
+          "raw": "Taper",
+          "display": "Taper",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D36",
+          "value": "REST",
+          "raw": "REST",
+          "display": "REST",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E36",
+          "value": "REST",
+          "raw": "REST",
+          "display": "REST",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F36",
+          "value": "TAPER START — freshness first",
+          "raw": "TAPER START — freshness first",
+          "display": "TAPER START — freshness first",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G36",
+          "value": "2-week taper begins",
+          "raw": "2-week taper begins",
+          "display": "2-week taper begins",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 37,
+      "fields": {
+        "Date": {
+          "address": "A37",
+          "value": "2026-11-02",
+          "raw": 46328,
+          "display": "Mon, 02 Nov 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B37",
+          "value": "Mon",
+          "raw": "Mon",
+          "display": "Mon",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C37",
+          "value": "Taper",
+          "raw": "Taper",
+          "display": "Taper",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D37",
+          "value": "Easy 30–35' @5:55–6:15 + 4×15–20s strides",
+          "raw": "Easy 30–35' @5:55–6:15 + 4×15–20s strides",
+          "display": "Easy 30–35' @5:55–6:15 + 4×15–20s strides",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E37",
+          "value": "Upper very light",
+          "raw": "Upper very light",
+          "display": "Upper very light",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F37",
+          "value": "Reduce volume; keep rhythm",
+          "raw": "Reduce volume; keep rhythm",
+          "display": "Reduce volume; keep rhythm",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G37",
+          "value": "~35–45% below peak-week volume",
+          "raw": "~35–45% below peak-week volume",
+          "display": "~35–45% below peak-week volume",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 38,
+      "fields": {
+        "Date": {
+          "address": "A38",
+          "value": "2026-11-03",
+          "raw": 46329,
+          "display": "Tue, 03 Nov 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B38",
+          "value": "Tue",
+          "raw": "Tue",
+          "display": "Tue",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C38",
+          "value": "Taper",
+          "raw": "Taper",
+          "display": "Taper",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D38",
+          "value": "Easy 30–35' @5:55–6:15",
+          "raw": "Easy 30–35' @5:55–6:15",
+          "display": "Easy 30–35' @5:55–6:15",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E38",
+          "value": "No heavy Lower",
+          "raw": "No heavy Lower",
+          "display": "No heavy Lower",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F38",
+          "value": "Freshness",
+          "raw": "Freshness",
+          "display": "Freshness",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G38",
+          "value": "Strength maintenance only",
+          "raw": "Strength maintenance only",
+          "display": "Strength maintenance only",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 39,
+      "fields": {
+        "Date": {
+          "address": "A39",
+          "value": "2026-11-04",
+          "raw": 46330,
+          "display": "Wed, 04 Nov 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B39",
+          "value": "Wed",
+          "raw": "Wed",
+          "display": "Wed",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C39",
+          "value": "Taper",
+          "raw": "Taper",
+          "display": "Taper",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D39",
+          "value": "REST",
+          "raw": "REST",
+          "display": "REST",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E39",
+          "value": "REST",
+          "raw": "REST",
+          "display": "REST",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F39",
+          "value": "Recovery",
+          "raw": "Recovery",
+          "display": "Recovery",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G39",
+          "value": "Planned",
+          "raw": "Planned",
+          "display": "Planned",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 40,
+      "fields": {
+        "Date": {
+          "address": "A40",
+          "value": "2026-11-05",
+          "raw": 46331,
+          "display": "Thu, 05 Nov 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B40",
+          "value": "Thu",
+          "raw": "Thu",
+          "display": "Thu",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C40",
+          "value": "Taper",
+          "raw": "Taper",
+          "display": "Taper",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D40",
+          "value": "35–40' total incl. 10–12' MP @5:35–5:45",
+          "raw": "35–40' total incl. 10–12' MP @5:35–5:45",
+          "display": "35–40' total incl. 10–12' MP @5:35–5:45",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E40",
+          "value": "Mobility / very light Full Body only",
+          "raw": "Mobility / very light Full Body only",
+          "display": "Mobility / very light Full Body only",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F40",
+          "value": "Maintain marathon rhythm",
+          "raw": "Maintain marathon rhythm",
+          "display": "Maintain marathon rhythm",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G40",
+          "value": "Finish wanting more",
+          "raw": "Finish wanting more",
+          "display": "Finish wanting more",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 41,
+      "fields": {
+        "Date": {
+          "address": "A41",
+          "value": "2026-11-06",
+          "raw": 46332,
+          "display": "Fri, 06 Nov 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B41",
+          "value": "Fri",
+          "raw": "Fri",
+          "display": "Fri",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C41",
+          "value": "Taper",
+          "raw": "Taper",
+          "display": "Taper",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D41",
+          "value": "REST or Recovery 20–25' @6:05–6:25",
+          "raw": "REST or Recovery 20–25' @6:05–6:25",
+          "display": "REST or Recovery 20–25' @6:05–6:25",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E41",
+          "value": "Skip heavy strength",
+          "raw": "Skip heavy strength",
+          "display": "Skip heavy strength",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F41",
+          "value": "Freshness",
+          "raw": "Freshness",
+          "display": "Freshness",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G41",
+          "value": "Optional run only",
+          "raw": "Optional run only",
+          "display": "Optional run only",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 42,
+      "fields": {
+        "Date": {
+          "address": "A42",
+          "value": "2026-11-07",
+          "raw": 46333,
+          "display": "Sat, 07 Nov 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B42",
+          "value": "Sat",
+          "raw": "Sat",
+          "display": "Sat",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C42",
+          "value": "Taper",
+          "raw": "Taper",
+          "display": "Taper",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D42",
+          "value": "TAPER LONG RUN 12–14K Easy @5:55–6:15",
+          "raw": "TAPER LONG RUN 12–14K Easy @5:55–6:15",
+          "display": "TAPER LONG RUN 12–14K Easy @5:55–6:15",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E42",
+          "value": "—",
+          "raw": "—",
+          "display": "—",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F42",
+          "value": "Maintain endurance without fatigue",
+          "raw": "Maintain endurance without fatigue",
+          "display": "Maintain endurance without fatigue",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G42",
+          "value": "No fast finish required",
+          "raw": "No fast finish required",
+          "display": "No fast finish required",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 43,
+      "fields": {
+        "Date": {
+          "address": "A43",
+          "value": "2026-11-08",
+          "raw": 46334,
+          "display": "Sun, 08 Nov 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B43",
+          "value": "Sun",
+          "raw": "Sun",
+          "display": "Sun",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C43",
+          "value": "Taper",
+          "raw": "Taper",
+          "display": "Taper",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D43",
+          "value": "REST",
+          "raw": "REST",
+          "display": "REST",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E43",
+          "value": "REST",
+          "raw": "REST",
+          "display": "REST",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F43",
+          "value": "Recovery",
+          "raw": "Recovery",
+          "display": "Recovery",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G43",
+          "value": "Planned",
+          "raw": "Planned",
+          "display": "Planned",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 44,
+      "fields": {
+        "Date": {
+          "address": "A44",
+          "value": "2026-11-09",
+          "raw": 46335,
+          "display": "Mon, 09 Nov 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B44",
+          "value": "Mon",
+          "raw": "Mon",
+          "display": "Mon",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C44",
+          "value": "Race Week",
+          "raw": "Race Week",
+          "display": "Race Week",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D44",
+          "value": "Easy 25–30' @5:55–6:15 + 4×15s strides",
+          "raw": "Easy 25–30' @5:55–6:15 + 4×15s strides",
+          "display": "Easy 25–30' @5:55–6:15 + 4×15s strides",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E44",
+          "value": "Upper very light or skip",
+          "raw": "Upper very light or skip",
+          "display": "Upper very light or skip",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F44",
+          "value": "Keep legs awake",
+          "raw": "Keep legs awake",
+          "display": "Keep legs awake",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G44",
+          "value": "Very low fatigue",
+          "raw": "Very low fatigue",
+          "display": "Very low fatigue",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 45,
+      "fields": {
+        "Date": {
+          "address": "A45",
+          "value": "2026-11-10",
+          "raw": 46336,
+          "display": "Tue, 10 Nov 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B45",
+          "value": "Tue",
+          "raw": "Tue",
+          "display": "Tue",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C45",
+          "value": "Race Week",
+          "raw": "Race Week",
+          "display": "Race Week",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D45",
+          "value": "Easy 25–30' @6:00–6:20",
+          "raw": "Easy 25–30' @6:00–6:20",
+          "display": "Easy 25–30' @6:00–6:20",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E45",
+          "value": "No Lower",
+          "raw": "No Lower",
+          "display": "No Lower",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F45",
+          "value": "Freshness",
+          "raw": "Freshness",
+          "display": "Freshness",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G45",
+          "value": "Easy only",
+          "raw": "Easy only",
+          "display": "Easy only",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 46,
+      "fields": {
+        "Date": {
+          "address": "A46",
+          "value": "2026-11-11",
+          "raw": 46337,
+          "display": "Wed, 11 Nov 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B46",
+          "value": "Wed",
+          "raw": "Wed",
+          "display": "Wed",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C46",
+          "value": "Race Week",
+          "raw": "Race Week",
+          "display": "Race Week",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D46",
+          "value": "REST",
+          "raw": "REST",
+          "display": "REST",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E46",
+          "value": "REST",
+          "raw": "REST",
+          "display": "REST",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F46",
+          "value": "Recovery",
+          "raw": "Recovery",
+          "display": "Recovery",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G46",
+          "value": "Planned",
+          "raw": "Planned",
+          "display": "Planned",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 47,
+      "fields": {
+        "Date": {
+          "address": "A47",
+          "value": "2026-11-12",
+          "raw": 46338,
+          "display": "Thu, 12 Nov 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B47",
+          "value": "Thu",
+          "raw": "Thu",
+          "display": "Thu",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C47",
+          "value": "Race Week",
+          "raw": "Race Week",
+          "display": "Race Week",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D47",
+          "value": "20–25' Easy + 5–8' MP feel @~5:40",
+          "raw": "20–25' Easy + 5–8' MP feel @~5:40",
+          "display": "20–25' Easy + 5–8' MP feel @~5:40",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E47",
+          "value": "Skip heavy Full Body",
+          "raw": "Skip heavy Full Body",
+          "display": "Skip heavy Full Body",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F47",
+          "value": "Race rhythm",
+          "raw": "Race rhythm",
+          "display": "Race rhythm",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G47",
+          "value": "Stop while fresh",
+          "raw": "Stop while fresh",
+          "display": "Stop while fresh",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 48,
+      "fields": {
+        "Date": {
+          "address": "A48",
+          "value": "2026-11-13",
+          "raw": 46339,
+          "display": "Fri, 13 Nov 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B48",
+          "value": "Fri",
+          "raw": "Fri",
+          "display": "Fri",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C48",
+          "value": "Race Week",
+          "raw": "Race Week",
+          "display": "Race Week",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D48",
+          "value": "REST",
+          "raw": "REST",
+          "display": "REST",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E48",
+          "value": "Skip",
+          "raw": "Skip",
+          "display": "Skip",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F48",
+          "value": "Freshness",
+          "raw": "Freshness",
+          "display": "Freshness",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G48",
+          "value": "Planned",
+          "raw": "Planned",
+          "display": "Planned",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 49,
+      "fields": {
+        "Date": {
+          "address": "A49",
+          "value": "2026-11-14",
+          "raw": 46340,
+          "display": "Sat, 14 Nov 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B49",
+          "value": "Sat",
+          "raw": "Sat",
+          "display": "Sat",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C49",
+          "value": "Race Week",
+          "raw": "Race Week",
+          "display": "Race Week",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D49",
+          "value": "REST or 15–20' shakeout only if it helps",
+          "raw": "REST or 15–20' shakeout only if it helps",
+          "display": "REST or 15–20' shakeout only if it helps",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E49",
+          "value": "—",
+          "raw": "—",
+          "display": "—",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F49",
+          "value": "Race prep",
+          "raw": "Race prep",
+          "display": "Race prep",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G49",
+          "value": "No fatigue; early night",
+          "raw": "No fatigue; early night",
+          "display": "No fatigue; early night",
+          "format": "General"
+        }
+      }
+    },
+    {
+      "row": 50,
+      "fields": {
+        "Date": {
+          "address": "A50",
+          "value": "2026-11-15",
+          "raw": 46341,
+          "display": "Sun, 15 Nov 2026",
+          "format": "ddd, dd mmm yyyy"
+        },
+        "Day": {
+          "address": "B50",
+          "value": "Sun",
+          "raw": "Sun",
+          "display": "Sun",
+          "format": "General"
+        },
+        "Phase": {
+          "address": "C50",
+          "value": "RACE",
+          "raw": "RACE",
+          "display": "RACE",
+          "format": "General"
+        },
+        "Run": {
+          "address": "D50",
+          "value": "BANGSAEN42 — 42.195K",
+          "raw": "BANGSAEN42 — 42.195K",
+          "display": "BANGSAEN42 — 42.195K",
+          "format": "General"
+        },
+        "Strength": {
+          "address": "E50",
+          "value": "—",
+          "raw": "—",
+          "display": "—",
+          "format": "General"
+        },
+        "Priority / Purpose": {
+          "address": "F50",
+          "value": "Sub-4 goal (~5:41/km)",
+          "raw": "Sub-4 goal (~5:41/km)",
+          "display": "Sub-4 goal (~5:41/km)",
+          "format": "General"
+        },
+        "Status / Note": {
+          "address": "G50",
+          "value": "RACE DAY",
+          "raw": "RACE DAY",
+          "display": "RACE DAY",
+          "format": "General"
+        }
+      }
+    }
+  ]
+}

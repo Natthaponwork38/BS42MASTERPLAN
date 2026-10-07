@@ -1,0 +1,54 @@
+name: Deploy BS42 to GitHub Pages
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Validate workbook and parser failure cases
+        run: npm test
+      - name: Resolve repository base path
+        shell: bash
+        run: |
+          repo_name="${GITHUB_REPOSITORY#*/}"
+          if [[ "$repo_name" == *.github.io ]]; then
+            echo 'BASE_PATH=/' >> "$GITHUB_ENV"
+          else
+            echo "BASE_PATH=/$repo_name/" >> "$GITHUB_ENV"
+          fi
+      - name: Parse, validate, typecheck and build PWA
+        run: npm run build
+      - name: Install browser for production QA
+        run: npx playwright install --with-deps chromium
+      - name: Verify mobile UI, data fidelity and offline reload
+        run: npm run test:browser
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - uses: actions/configure-pages@v5
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

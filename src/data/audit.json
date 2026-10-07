@@ -1,0 +1,33 @@
+{
+  "workbook": "BS42_Master_Plan_2026_Updated_2026-10-06.xlsx",
+  "sha256": "84040d72d6db507f5055e427fa87981dda0b91cfd36ce3adcfbac1b3c313e184",
+  "raceDate": "2026-11-15",
+  "sheets": [
+    {
+      "sheet": "BS42 Master Plan",
+      "sourceRecords": 49,
+      "generatedRecords": 49,
+      "sourceCells": 350,
+      "mappedCells": 350,
+      "unmappedCells": []
+    },
+    {
+      "sheet": "Long Run Roadmap",
+      "sourceRecords": 8,
+      "generatedRecords": 8,
+      "sourceCells": 81,
+      "mappedCells": 81,
+      "unmappedCells": []
+    },
+    {
+      "sheet": "Guardrails",
+      "sourceRecords": 15,
+      "generatedRecords": 15,
+      "sourceCells": 31,
+      "mappedCells": 31,
+      "unmappedCells": []
+    }
+  ],
+  "unmapped": [],
+  "assumptions": []
+}
