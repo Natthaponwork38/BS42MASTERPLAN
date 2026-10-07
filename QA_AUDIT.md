@@ -55,6 +55,7 @@ The only presentation convention is training-week numbering: seven-day blocks st
 - Repository-path manifest, assets, font, navigation, refresh and offline behavior verified at `/bs42masterplan/`.
 - GitHub Actions workflow is complete: dependency installation, parser/failure tests, build, Chromium production QA, artifact upload and Pages deployment.
 - The workflow derives the base path from the actual repository name and deploys pushes to `main`.
-- **GitHub Pages configuration is ready. No live deployment was attempted:** this workspace has no Git repository or configured remote. Publishing requires putting these files in a GitHub repository and selecting GitHub Actions in repository Settings → Pages. A real Actions run and public URL remain unverified.
+- **GitHub Pages is deployed and verified:** [live BS42 app](https://natthaponwork38.github.io/BS42MASTERPLAN/) from [Natthaponwork38/BS42MASTERPLAN](https://github.com/Natthaponwork38/BS42MASTERPLAN). The local Git repository tracks `origin/main`, and Pages uses GitHub Actions.
+- The [first production workflow](https://github.com/Natthaponwork38/BS42MASTERPLAN/actions/runs/37556322191) completed successfully on 7 October 2026: build and production QA passed, and Pages deployment succeeded. The publicly hosted Plan page loaded correctly at the actual `/BS42MASTERPLAN/` repository path. The deployed Long Run and Guardrails destinations were also checked.
 
 See `README.md` for local commands, workbook updates, intentional schema changes and deployment setup. Machine-readable coverage and source fingerprint are in `src/data/audit.json`.

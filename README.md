@@ -2,6 +2,10 @@
 
 A read-only, mobile-first companion to the BS42 marathon workbook. React, TypeScript and Vite generate a static PWA with exactly three destinations: Plan, Long Run and Guardrails.
 
+Live app: [BS42](https://natthaponwork38.github.io/BS42MASTERPLAN/)
+
+Repository: [Natthaponwork38/BS42MASTERPLAN](https://github.com/Natthaponwork38/BS42MASTERPLAN). GitHub Pages is configured to deploy through GitHub Actions on pushes to `main`.
+
 ## Run locally
 
 Requires Node.js 22.12 or later.
