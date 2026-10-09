@@ -152,6 +152,8 @@ details > summary::marker { color: var(--muted); font-size: 11px; }
 .guardrails > section { padding: 25px 0; border-top: 1px solid var(--line); }
 .guardrails h2 { font-size: 16px; margin-bottom: 11px; }
 .guardrails p { font-size: 16px; line-height: 1.85; letter-spacing: -.1px; }
+.guardrails .source-line { display: block; }
+.guardrails .source-line ~ .source-line { margin-top: 5px; }
 .guardrails > section:first-child p { font-size: 20px; line-height: 1.65; font-weight: 450; }
 .guardrails > section:first-child { padding-top: 22px; }
 .guardrails > section:last-child { border-bottom: 1px solid var(--line); }

@@ -162,6 +162,12 @@ test('capture mobile pages for visual QA', async ({ page }, testInfo) => {
       await page.screenshot({ path: testInfo.outputPath(`long-run-selected-${theme}-430.png`) });
     }
     if (route === 'guardrails') {
+      for (const width of [430,1375]) {
+        await page.setViewportSize({width,height:width === 430 ? 932 : 1029});
+        await page.getByRole('heading',{name:'Weekly baseline',exact:true}).evaluate(el => window.scrollTo({top:el.getBoundingClientRect().top+scrollY-40,behavior:'instant'}));
+        await page.screenshot({path:testInfo.outputPath(`guardrails-structured-${theme}-${width}.png`)});
+      }
+      await page.setViewportSize({width:430,height:932});
       await page.getByRole('heading',{name:'Pace guide',exact:true}).evaluate(el => window.scrollTo({top:el.getBoundingClientRect().top+scrollY-60,behavior:'instant'}));
       await page.screenshot({ path: testInfo.outputPath(`guardrails-pace-${theme}-430.png`) });
     }

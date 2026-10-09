@@ -113,3 +113,11 @@ The production visual review passed for all three destinations in both themes at
 ## Long Run Midpoint color — 7 October 2026
 
 The Midpoint line, all its circular data points and its legend swatch use the existing semantic accent-primary token: #709600 in Light Mode and #C8FF00 in Dark Mode. Min/Max retain their neutral solid/dashed treatments. Selected points retain their larger radius and contrasting outline, so selection remains distinguishable when all points are green. Chart geometry, exact source values and interaction behavior are unchanged. Light green measures 3.24:1 against the page; dark green measures 16.00:1. Both themes and selected states were visually reviewed at 430px. The 19 source/derivation tests, 30 Chromium/WebKit browser checks and production build passed.
+
+## Guardrails line grouping — 9 October 2026
+
+Weekly baseline is separated into three topics. Strength split has one line per training day and a separate unchanged load-reduction note. Priority order has one line per numbered priority (1–4). Pace guide has one line per workout category and a separate Garmin explanation, with the existing green pace emphasis retained. Natural wrapping remains available within each line on narrow screens.
+
+Only the four requested entries receive this presentation. All original text, numbers, order and source-cell attribution remain intact. Captured pipe/semicolon/spacing separators remain verbatim in the DOM as visually hidden source separators, while all meaningful wording stays visible. The workbook, parser, generated JSON, other Guardrails, navigation, theme tokens and PWA configuration are unchanged.
+
+Light and Dark screenshots were reviewed at 430 × 932 and 1375 × 1029, including the full Garmin note. The production build, 19 source/derivation checks and 30 Chromium/WebKit browser checks passed, including exact reconciliation of every Guardrails paragraph to its workbook cell and offline reload/navigation. All 462 included source cells remain mapped; Fueling Plan remains excluded.
