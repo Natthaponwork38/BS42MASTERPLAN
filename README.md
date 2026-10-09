@@ -57,6 +57,8 @@ The global Material Symbols switch selects Light or Dark Mode. A manual choice i
 
 Selecting Plan always returns to its top. Selecting it again while already on Plan scrolls smoothly upward, or immediately when reduced motion is requested. The countdown label uses one line whenever its column has enough space. View day is a filled green button with a 44px touch target; its `--accent-action` / `--accent-on-action` roles inherit each theme's accessible accent and page colors.
 
+Selecting a Long Run chart date shows the complete matching session directly beneath the date controls without scrolling the chart away. The inline session shares its rendering with the full eight-session roadmap, which remains in chronological order below. Exact source values and formulas are accessible in either view.
+
 The green identity uses five semantic theme tokens: `--accent-primary` for selected points/indicators, `--accent-text` for readable text, `--accent-rail` for structural edges and active navigation icons, `--accent-border` for soft separators, and `--accent-muted-bg` for subtle surfaces. Light Mode uses restrained greens (#709600 / #587900 / #789A18); Dark Mode uses brighter neon text/selected points (#C8FF00) with a quieter lime rail (#B6DE32). Small accent text is at least 4.72:1 against the page background; meaningful structural accents are at least 3:1. Today is a square section with only a 4px left rail and a theme-specific subtle surface, with no rounded outline or shadow. Long Run source values and midpoint formulas remain available under each Source values disclosure; Guardrails emphasis wraps exact source substrings without rewriting them.
 
 ## PWA and offline

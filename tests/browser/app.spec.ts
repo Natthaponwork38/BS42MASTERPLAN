@@ -71,6 +71,32 @@ test('Plan navigation always opens the top and repeated selection scrolls back u
     await expect.poll(() => page.evaluate(() => scrollY)).toBe(0);
   }
 });
+test('chart date selection shows the complete session directly below without moving the chart', async ({ page }) => {
+  for (const width of [430,1375]) {
+    await page.setViewportSize({width,height:width === 430 ? 932 : 1029});
+    await page.goto('./#/long-run');
+    await page.reload();
+    await expect(page.getByRole('article',{name:'Selected Long Run session'})).toHaveCount(0);
+    for (let i=0;i<source.longRun.entries.length;i++) {
+      const entry=source.longRun.entries[i];
+      const button=page.getByRole('button',{name:`Inspect ${source.longRun.chart.entries[i].fields.Date.value}`,exact:true});
+      await button.scrollIntoViewIfNeeded();
+      const chartTop=await page.locator('svg').evaluate(el=>el.getBoundingClientRect().top);
+      await button.click();
+      const preview=page.getByRole('article',{name:'Selected Long Run session'});
+      await expect(preview.locator('time')).toHaveAttribute('datetime',String(entry.fields.Date.value));
+      await expect(preview.locator('.role')).toHaveText(String(entry.fields.Role.value));
+      const previewBox=await preview.boundingBox(), buttonBox=await button.boundingBox();
+      expect(previewBox!.y).toBeGreaterThan(buttonBox!.y+buttonBox!.height);
+      expect(previewBox!.y).toBeLessThan(buttonBox!.y+buttonBox!.height+110);
+      expect(await page.locator('svg').evaluate(el=>el.getBoundingClientRect().top)).toBeCloseTo(chartTop,0);
+      await preview.locator('summary').click();
+      for (const label of ['Target Min (km)','Target Max (km)','Planning Midpoint (km)']) await expect(preview.locator(`[data-source-cell="${entry.fields[label].address}"]`)).toHaveText(String(entry.fields[label].value));
+      await expect(preview.locator('.source-formula')).toContainText(entry.fields['Planning Midpoint (km)'].formula!);
+      expect(await page.locator('.roadmap-entry time').evaluateAll(els=>els.map(el=>el.getAttribute('datetime')))).toEqual(source.longRun.entries.map(e=>String(e.fields.Date.value)));
+    }
+  }
+});
 test('all Guardrails text and title are verbatim', async ({ page }) => {
   await page.goto('./#/guardrails');
   await expect(page.locator('.subtitle')).toHaveText(String(source.guardrails.title.value));

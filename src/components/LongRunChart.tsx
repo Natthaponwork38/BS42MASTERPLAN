@@ -1,6 +1,7 @@
+import type { ReactNode } from 'react';
 import { roadmap } from '../lib/data';
 
-export function LongRunChart({ selected, onSelect }: { selected: number | null; onSelect: (i: number) => void }) {
+export function LongRunChart({ selected, onSelect, children }: { selected: number | null; onSelect: (i: number) => void; children?: ReactNode }) {
   const entries = roadmap.chart.entries;
   const x = (i: number) => 33 + i * 45;
   const y = (v: number) => 199 - v / 45 * 164;
@@ -20,5 +21,6 @@ export function LongRunChart({ selected, onSelect }: { selected: number | null; 
     <div className="chart-legend"><span className="legend-min">Min</span><span className="legend-max">Max</span><span className="legend-mid">Midpoint</span></div>
     <div className="chart-select" aria-label="Inspect chart date">{entries.map((e,i) => <button key={e.row} onClick={() => onSelect(i)} aria-pressed={selected === i} aria-label={`Inspect ${String(e.fields.Date.value)}`}>{String(e.fields.Date.value)}</button>)}</div>
     {selected !== null && <p className="chart-reading" role="status">{String(entries[selected].fields.Date.value)} · Min {String(entries[selected].fields.Min.value)} · Max {String(entries[selected].fields.Max.value)} · Mid {String(entries[selected].fields.Mid.value)} km</p>}
+    {children}
   </figure>;
 }

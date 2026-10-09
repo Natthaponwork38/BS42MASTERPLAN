@@ -50,7 +50,7 @@ The only presentation convention is training-week numbering: seven-day blocks st
 ## Build and deployment readiness
 
 - `npm test`: **19 passed**.
-- `TEST_WEBKIT=1 BASE_PATH=/BS42MASTERPLAN/ npm run test:browser`: **30 passed**, fifteen per browser, with no skipped checks.
+- `TEST_WEBKIT=1 BASE_PATH=/BS42MASTERPLAN/ npm run test:browser`: **32 passed**, sixteen per browser, with no skipped checks.
 - `BASE_PATH=/BS42MASTERPLAN/ npm run build`: **passed**, including Excel regeneration, completeness validation, TypeScript checks, Vite production output and PWA service-worker generation.
 - Repository-path manifest, assets, font, navigation, refresh and offline behavior verified at `/BS42MASTERPLAN/`.
 - GitHub Actions workflow is complete: dependency installation, parser/failure tests, build, Chromium production QA, artifact upload and Pages deployment.
@@ -121,3 +121,11 @@ Weekly baseline is separated into three topics. Strength split has one line per 
 Only the four requested entries receive this presentation. All original text, numbers, order and source-cell attribution remain intact. Captured pipe/semicolon/spacing separators remain verbatim in the DOM as visually hidden source separators, while all meaningful wording stays visible. The workbook, parser, generated JSON, other Guardrails, navigation, theme tokens and PWA configuration are unchanged.
 
 Light and Dark screenshots were reviewed at 430 × 932 and 1375 × 1029, including the full Garmin note. The production build, 19 source/derivation checks and 30 Chromium/WebKit browser checks passed, including exact reconciliation of every Guardrails paragraph to its workbook cell and offline reload/navigation. All 462 included source cells remain mapped; Fueling Plan remains excluded.
+
+## Long Run date inspection — 9 October 2026
+
+Selecting a chart date now shows that session directly beneath the date selector and existing chart reading. The inline session includes the full date, target distance, exact midpoint, full Role, source min/max/midpoint values and original formula disclosure. It uses the same rendering component as the full roadmap, so the selected view does not maintain separate workout text. Selection switches the inline session in place; no automatic page scrolling or animation is added.
+
+The full roadmap below remains chronological with all eight entries, and the independent chart source region and formula references remain accessible. Selected chart points, date buttons and roadmap emphasis stay synchronized. The parser already validates that each chart date and its values correspond to the same-position roadmap entry. Source files, parsing, theme tokens, navigation and PWA configuration are unchanged.
+
+All eight date selections were checked at 430px and 1375px in Chromium and WebKit: the preview shows the matching source date, Role, min/max/midpoint and formula directly below the date control, the chart stays in place, and the full roadmap retains its original order. Both themes were visually reviewed at 430px. The 19 source/derivation checks, 32 browser checks and production PWA build passed. All 462 source cells remain mapped and Fueling Plan remains excluded.
