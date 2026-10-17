@@ -3,6 +3,7 @@ import { BottomNav, destinations, type Destination } from './components/BottomNa
 import { Plan } from './pages/Plan';
 import { LongRun } from './pages/LongRun';
 import { Guardrails } from './pages/Guardrails';
+import { RaceDay } from './pages/RaceDay';
 import { calendarDate } from './lib/dates';
 import { ThemeToggle } from './components/ThemeToggle';
 
@@ -28,6 +29,6 @@ export default function App() {
     firstRender.current = false;
   }, [active]);
   return <><a href="#main" className="skip-link">Skip to content</a><div className="app-header"><ThemeToggle /></div><main id="main" ref={main} tabIndex={-1} key={active}>
-    {active === 'plan' ? <Plan today={today} /> : active === 'long-run' ? <LongRun /> : <Guardrails />}
+    {active === 'plan' ? <Plan today={today} /> : active === 'long-run' ? <LongRun /> : active === 'guardrails' ? <Guardrails /> : <RaceDay />}
   </main><BottomNav active={active} /></>;
 }

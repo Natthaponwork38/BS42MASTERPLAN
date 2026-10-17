@@ -1,8 +1,9 @@
-export type Destination = 'plan' | 'long-run' | 'guardrails';
+export type Destination = 'plan' | 'long-run' | 'guardrails' | 'race-day';
 export const destinations = [
   { id: 'plan', label: 'Plan', icon: 'calendar_month' },
   { id: 'long-run', label: 'Long Run', icon: 'route' },
   { id: 'guardrails', label: 'Guardrails', icon: 'rule' },
+  { id: 'race-day', label: 'Race Day', icon: 'flag' },
 ] as const;
 export function BottomNav({ active }: { active: Destination }) {
   return <nav className="bottom-nav" aria-label="Primary navigation"><div>{destinations.map(d => <a key={d.id} href={`#/${d.id}`} aria-current={active === d.id ? 'page' : undefined} onClick={event => {

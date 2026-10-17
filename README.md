@@ -1,6 +1,6 @@
 # BS42
 
-A read-only, mobile-first companion to the BS42 marathon workbook. React, TypeScript and Vite generate a static PWA with exactly three destinations: Plan, Long Run and Guardrails.
+A mobile-first companion to the BS42 marathon workbook. React, TypeScript and Vite generate a static PWA with four destinations: Plan, Long Run, Guardrails and Race Day. Training and fueling information remain read-only; Race Day adds a local packing checklist.
 
 Live app: [BS42](https://natthaponwork38.github.io/BS42MASTERPLAN/)
 
@@ -39,6 +39,8 @@ Only these sheets are extracted:
 
 Fueling Plan contributes nothing to the generated data or production bundle. The original workbook remains intact in the source repository; it is never copied into the deployed site. The Fueling principle statement in Guardrails remains because that sheet is included.
 
+Race Day uses the separate schedule explicitly supplied by the user on 17 October 2026, defined in `src/lib/raceDay.ts`. It does not import or reactivate the excluded Fueling Plan sheet. Nutrition values are the supplied carbohydrate and caffeine amounts; no unprovided product nutrition is inferred.
+
 `npm run data` generates `src/data/master-plan.json`, `long-run.json`, `guardrails.json` and `audit.json`. `npm run build` always runs the parser first. Browser code imports only generated data and type-only source types; workbook parsing libraries stay out of the application bundle.
 
 The parser verifies the observed workbook layout, every populated cell, required fields, source dates and weekdays, chronological order, midpoint formulas and cached results, secondary chart values, chart title and series bindings. Original strings, punctuation and line breaks are retained. Every field includes its source address, original raw value, formatted display, number format and formula/cache where present. Dates become timezone-free `YYYY-MM-DD` values while retaining original Excel serials. The race date is derived from the explicit RACE row.
@@ -61,13 +63,19 @@ Selecting a Long Run chart date shows the complete matching session directly ben
 
 The green identity uses five semantic theme tokens: `--accent-primary` for selected points/indicators, `--accent-text` for readable text, `--accent-rail` for structural edges and active navigation icons, `--accent-border` for soft separators, and `--accent-muted-bg` for subtle surfaces. Light Mode uses restrained greens (#709600 / #587900 / #789A18); Dark Mode uses brighter neon text/selected points (#C8FF00) with a quieter lime rail (#B6DE32). Small accent text is at least 4.72:1 against the page background; meaningful structural accents are at least 3:1. Today is a square section with only a 4px left rail and a theme-specific subtle surface, with no rounded outline or shadow. Long Run source values and midpoint formulas remain available under each Source values disclosure; Guardrails emphasis wraps exact source substrings without rewriting them.
 
+## Race Day
+
+The `#/race-day` route contains exactly four main sections: Race Overview, Fueling Summary, a static Fueling Timeline, and Packing Checklist with compact notes. Pre-race 70g is kept separate from the planned 199g / seven in-race gels. One optional 29g backup brings the maximum in-race amount to 228g, with eight gels to carry. Planned intake is approximately 50g/hour over four hours, with 75mg caffeine.
+
+The checklist has one checkbox for each of five product types, including quantities, and a packed-product count out of five. Only these booleans persist under `bs42-race-day-packing-v1`. Reset Checklist asks for confirmation and removes only that key. Malformed saved data falls back safely; blocked storage leaves the checklist usable for the visit and displays a storage notice. No consumption tracker, live nutrition total, race-progress state, timers, notifications or inventory management exists.
+
 ## PWA and offline
 
-The generated manifest uses standalone display, scoped start URL, 192px and 512px PNG icons, a maskable icon and an Apple touch icon. All JavaScript, CSS, bundled training data, app icons and the five-symbol Google font subset are precached. No remote font or runtime API is needed. Open the deployed app online once and wait for the service worker to finish caching before going offline. Later builds update the read-only bundle through the service worker.
+The generated manifest uses standalone display, scoped start URL, 192px and 512px PNG icons, a maskable icon and an Apple touch icon. All JavaScript, CSS, bundled training/race data, app icons and the seven-symbol Google font subset are precached. No remote font or runtime API is needed. Open the deployed app online once and wait for the service worker to finish caching before going offline. Later builds update the read-only bundle through the service worker.
 
 On iPhone Safari, use Share, then Add to Home Screen. `viewport-fit=cover`, safe-area padding and a fixed bottom navigation accommodate standalone mode. An actual iPhone is needed to verify installation and physical safe-area rendering.
 
-The UI uses only Google's Material Symbols Rounded (`calendar_month`, `route`, `rule`, `light_mode`, `dark_mode`), packaged locally under the accompanying Apache 2.0 license. The PNG app icons are typographic BS42 branding. SVG is used only for the Long Run data visualization.
+The UI uses only Google's Material Symbols Rounded (`calendar_month`, `route`, `rule`, `flag`, `check`, `light_mode`, `dark_mode`), packaged locally under the accompanying Apache 2.0 license. The PNG app icons are typographic BS42 branding. SVG is used only for the Long Run data visualization.
 
 ## GitHub Pages
 

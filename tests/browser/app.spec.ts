@@ -12,7 +12,7 @@ test.beforeEach(async ({ page }) => { await page.clock.setFixedTime(new Date('20
 test('430px Plan is complete, Today works and notes remain exact', async ({ page }) => {
   const errors: string[] = []; page.on('pageerror', e => errors.push(e.message));
   await page.goto('./');
-  await expect(page.getByRole('navigation').getByRole('link')).toHaveCount(3);
+  await expect(page.getByRole('navigation').getByRole('link')).toHaveCount(4);
   await expect(page.getByText('days to race')).toBeVisible();
   await expect(page.getByText('Week 2 / 7')).toBeVisible();
   await expect(page.locator('.training-week')).toHaveCount(7);
@@ -147,6 +147,11 @@ test('production service worker caches every asset and survives an unavailable o
   await page.getByRole('link',{name:'Guardrails',exact:true}).click();
   await expect(page.getByRole('heading',{name:'Fueling principle',exact:true})).toBeVisible();
   await page.reload(); await expect(page.getByRole('heading',{name:'Guardrails',exact:true})).toBeVisible();
+  await page.getByRole('link',{name:'Race Day',exact:true}).click();
+  await expect(page.getByRole('heading',{name:'Fueling Timeline',exact:true})).toBeVisible();
+  await page.getByRole('checkbox',{name:/ProEngy/}).check();
+  await page.reload();
+  await expect(page.getByRole('checkbox',{name:/ProEngy/})).toBeChecked();
   await expect(page.locator('html')).toHaveAttribute('data-theme',offlineTheme);
   expect(await page.evaluate(() => document.fonts.check('23px "Material Symbols Rounded"'))).toBe(true);
   expect(requests.filter(u => !u.startsWith(origin))).toEqual([]);
@@ -165,7 +170,7 @@ test('manifest and all assets work under the configured Pages path', async ({ pa
 test('small mobile and desktop widths have no horizontal overflow', async ({ page }) => {
   for(const width of [320,390,430,596,1024]) {
     await page.setViewportSize({width,height:932});
-    for(const route of ['plan','long-run','guardrails']) {
+    for(const route of ['plan','long-run','guardrails','race-day']) {
       await page.goto(`./#/${route}`);
       await expect(page.locator('h1')).toBeVisible();
       await page.evaluate(() => document.fonts.ready);
@@ -272,7 +277,7 @@ test('both themes retain readable contrast, compact controls and only Material S
   }
   await page.emulateMedia({ colorScheme: 'light' }); await page.goto('./');
   for (const theme of ['light','dark']) {
-    for (const route of ['plan','long-run','guardrails']) {
+    for (const route of ['plan','long-run','guardrails','race-day']) {
       await page.goto(`./#/${route}`);
       await expect(page.locator('html')).toHaveAttribute('data-theme',theme);
       await expect(page.locator('footer')).toHaveCount(0);
@@ -285,7 +290,7 @@ test('both themes retain readable contrast, compact controls and only Material S
           }
           return getComputedStyle(document.documentElement).backgroundColor;
         };
-        const selector='.key-value,.countdown strong,.roadmap-heading>p,.subtitle,.eyebrow,.today-button,.today-tag,.today-section .day-context,.today-section dt,.today-section dd,.bottom-nav a[aria-current]>span:last-child,.theme-selected,.chart-reading,.chart-select button[aria-pressed=true]';
+        const selector='.key-value,.countdown strong,.roadmap-heading>p,.subtitle,.eyebrow,.today-button,.today-tag,.today-section .day-context,.today-section dt,.today-section dd,.bottom-nav a[aria-current]>span:last-child,.theme-selected,.chart-reading,.chart-select button[aria-pressed=true],.race-day dt,.race-nutrition dd,.race-nutrition small,.race-note,.fueling-columns,.fueling-time,.fueling-product>span,.packing-count,.packing-name small,.race-notes p,.race-reset';
         return {
           text:[...document.querySelectorAll(selector)].map(el=>({color:getComputedStyle(el).color,bg:background(el)})),
           structure:[...document.querySelectorAll('.today-section,.bottom-nav a[aria-current] .material-symbols-rounded,.chart-selected')].map(el=>({
@@ -304,7 +309,7 @@ test('both themes retain readable contrast, compact controls and only Material S
       }
       const toggle = await page.locator('.theme-toggle').boundingBox(); expect(toggle!.height).toBeGreaterThanOrEqual(44);
       const icons = await page.locator('.material-symbols-rounded').allTextContents();
-      expect(icons.every(icon=>['calendar_month','route','rule','light_mode','dark_mode'].includes(icon))).toBe(true);
+      expect(icons.every(icon=>['calendar_month','route','rule','flag','check','light_mode','dark_mode'].includes(icon))).toBe(true);
       expect(await page.locator('body').innerText()).not.toMatch(/\p{Extended_Pictographic}|Read-only training companion/u);
       if (route === 'long-run') {
         const boxes = await page.locator('.chart-select button').evaluateAll(els=>els.map(el=>({y:el.getBoundingClientRect().y,height:el.getBoundingClientRect().height})));

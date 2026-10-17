@@ -1,0 +1,47 @@
+.race-day > section { border-top: 1px solid var(--line); padding: 25px 0 28px; }
+.race-day h2 { margin-bottom: 20px; }
+.race-event { font-size: 25px; font-weight: 600; letter-spacing: -.5px; }
+.race-event-date { color: var(--muted); font-size: 14px; margin-top: 8px; }
+.race-overview-values { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 24px; }
+.race-day dt { font-size: 12px; line-height: 1.5; color: var(--muted); }
+.race-overview-values dd { margin-top: 5px; font-size: 16px; font-weight: 550; }
+.race-nutrition { display: grid; grid-template-columns: 1fr 1fr; gap: 25px 20px; }
+.race-nutrition dd { font-size: 28px; font-weight: 600; margin-top: 5px; line-height: 1.3; letter-spacing: -.6px; font-variant-numeric: tabular-nums; }
+.race-nutrition dd > span { font-size: 13px; font-weight: 450; letter-spacing: 0; margin-left: 4px; }
+.race-nutrition small { display: block; font-size: 12px; color: var(--muted); margin-top: 4px; line-height: 1.5; font-weight: 400; letter-spacing: 0; }
+.race-nutrition .planned-carbs dd { color: var(--accent-text); }
+.race-note { font-size: 13px; line-height: 1.65; color: var(--muted); }
+.race-nutrition + .race-note { margin-top: 23px; }
+.fueling-columns, .fueling-timeline > li { display: grid; grid-template-columns: 64px minmax(0,1fr) 44px; gap: 10px; }
+.fueling-columns { margin-top: 21px; font-size: 10px; letter-spacing: .8px; text-transform: uppercase; color: var(--muted); }
+.fueling-columns > :last-child { text-align: right; }
+.fueling-timeline { list-style: none; margin: 0; padding: 0; }
+.fueling-timeline > li { border-bottom: 1px solid var(--line); padding: 19px 0; align-items: baseline; }
+.fueling-time { font-size: 12px; font-variant-numeric: tabular-nums; color: var(--muted); }
+.fueling-product { font-size: 14px; line-height: 1.65; overflow-wrap: anywhere; }
+.fueling-product > span { display: block; font-size: 12px; color: var(--muted); margin-top: 4px; }
+.fueling-carbs { font-size: 14px; font-weight: 550; text-align: right; font-variant-numeric: tabular-nums; }
+.packing-count { font-size: 14px; color: var(--accent-text); font-weight: 550; margin-bottom: 18px; }
+.packing-group { min-width: 0; border: 0; padding: 0; margin: 25px 0 0; }
+.packing-group legend { padding: 0 0 7px; font-size: 14px; font-weight: 600; }
+.packing-item { display: grid; grid-template-columns: 24px minmax(0,1fr) auto; column-gap: 14px; align-items: center; padding: 15px 0; min-height: 74px; border-bottom: 1px solid var(--line); cursor: pointer; }
+.packing-item input { appearance: none; -webkit-appearance: none; grid-area: 1/1; width: 24px; height: 24px; margin: 0; border: 1px solid var(--muted); border-radius: 0; background: var(--bg); cursor: pointer; }
+.packing-item input:checked { background: var(--accent-action); border-color: var(--accent-action); }
+.packing-item input:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 4px; }
+.packing-item .packing-check { grid-area: 1/1; visibility: hidden; pointer-events: none; width: 24px; height: 24px; padding: 2px; font-size: 20px; color: var(--accent-on-action); }
+.packing-item input:checked + .packing-check { visibility: visible; }
+.packing-name { grid-area: 1/2; font-size: 14px; line-height: 1.6; overflow-wrap: anywhere; }
+.packing-name small { display: block; color: var(--muted); font-size: 12px; margin-top: 3px; }
+.packing-quantity { grid-area: 1/3; font-size: 16px; font-weight: 600; white-space: nowrap; }
+.race-carry { font-size: 13px; line-height: 1.6; margin-top: 19px; }
+.race-carry strong { color: var(--accent-text); }
+.race-reset { min-height: 44px; border: 1px solid var(--muted); border-radius: 0; padding: 10px 15px; margin-top: 19px; background: transparent; color: var(--text); font-size: 13px; font-weight: 550; }
+.race-notes { margin-top: 28px; border-top: 1px solid var(--line); padding-top: 20px; }
+.race-notes h3 { font-size: 13px; margin-bottom: 8px; font-weight: 550; }
+.race-notes p { font-size: 13px; line-height: 1.75; color: var(--muted); }
+.race-notes p + p { margin-top: 9px; }
+@media (max-width: 360px) {
+  .race-overview-values { grid-template-columns: 1fr 1fr; row-gap: 18px; }
+  .race-nutrition { column-gap: 14px; }
+  .fueling-columns, .fueling-timeline > li { grid-template-columns: 56px minmax(0,1fr) 35px; gap: 8px; }
+}

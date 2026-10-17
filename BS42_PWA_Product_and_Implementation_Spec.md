@@ -1591,3 +1591,18 @@ Before making implementation assumptions, inspect the actual Excel workbook stru
 
 Build the full working project, not only a mockup.
 ```
+
+# Addendum — Race Day, 17 October 2026
+
+This user-requested extension supersedes the original three-destination restriction only by adding Race Day (`#/race-day`) as the fourth destination. Preserve Plan, Long Run and Guardrails and their existing behavior and source data. Keep training and fueling data read-only. The sole new persistent interaction is a Race Day packing checklist; do not implement a fueling-consumption tracker.
+
+Race Day has exactly four main sections:
+
+1. Race Overview: Bangsaen42, 15 November 2026, 42.195K, Sub-4, target pace approximately 5:41/km.
+2. Fueling Summary: pre-race 70g separately; planned in-race 199g from seven gels; optional backup 29g; maximum in-race 228g; approximately 50g/hour over four hours; planned caffeine 75mg.
+3. Static Fueling Timeline: Pre-race ProEngy + AminoVITAL Blue 70g; 00:25 AminoVITAL Red 28g; 00:55 X-REAL Blackcurrant 29g; 01:25 Red 28g; 01:55 Blackcurrant 29g; 02:25 Red 28g; 02:55 X-REAL C29+ Orange 29g with 75mg caffeine; 03:25 Red 28g; 03:50 Blackcurrant 29g as optional backup. This is for reviewing before the race, with no consumption controls.
+4. Packing Checklist: Pre-Race — ProEngy Carb Powder 50g × 1 and AminoVITAL Blue 100g × 1. Race Gels — AminoVITAL Red × 4, X-REAL Blackcurrant × 3 (two planned and one backup), X-REAL C29+ Orange with 75mg caffeine × 1. Carry eight race gels. Use one checkbox per product type, show quantities and a count out of five types, persist via localStorage and confirm Reset Checklist. Compact hydration/fueling notes may follow inside this section.
+
+There must be no consumed-gel state, live carbohydrate/caffeine totals, consumption counters/percentages, race-progress tracking or consumption reset, per-gel tracking, inventory, timers or notifications. Continue the existing mobile-first Light/Dark design system, square corners, semantic theme-aware green tokens, accessible contrast and touch targets, Material Symbols exclusively, and no emoji or decorative gradients.
+
+These Race Day values come from the user's explicit schedule, independently of the workbook. The Fueling Plan sheet remains excluded. No unprovided product nutrition should be inferred. Retain GitHub Pages hash routing, build-time Excel validation and offline support. QA must verify calculations, the four routes, checklist persistence and confirmed reset, both themes and 430px layout.

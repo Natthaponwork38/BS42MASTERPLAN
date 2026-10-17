@@ -26,13 +26,13 @@ The only presentation convention is training-week numbering: seven-day blocks st
 
 ## UI verification
 
-- Exactly three primary destinations: Plan, Long Run, Guardrails.
-- Read-only throughout; no editing, tracking controls, authentication, backend or database.
-- 430 × 932 screenshots of all three pages visually reviewed in Chromium and WebKit.
+- Four primary destinations: Plan, Long Run, Guardrails and Race Day (added by the 17 October request).
+- Training and fueling information remain read-only. Race Day has a local packing checklist only; no fueling/race tracking, authentication, backend or database.
+- 430 × 932 screenshots reviewed in Chromium and WebKit; Race Day has additional overview, timeline and checklist captures in both themes.
 - Complete content accessible without horizontal spreadsheet scrolling; no horizontal overflow at 320, 390, 430 or 1024px.
 - Today opens the correct date by scrolling; original source status determines completed styling.
 - Long Run SVG shows Min, Max and Mid; touch targets select exact values, which also remain in the textual roadmap and separate chart source section.
-- No emoji, gradients or non-Google interface icon libraries. Five official Material Symbols Rounded glyphs are packaged locally.
+- No emoji, gradients or non-Google interface icon libraries. Seven official Material Symbols Rounded glyphs are packaged locally, including flag and check for Race Day.
 - Semantic headings, labeled navigation, screen-reader source labels, visible keyboard focus, skip link, 44px controls and reduced-motion handling.
 - Native system type, neutral surfaces, selective Neon Green focus and manual Light / Dark themes.
 - iOS viewport, safe-area insets and Apple standalone metadata are configured.
@@ -49,8 +49,8 @@ The only presentation convention is training-week numbering: seven-day blocks st
 
 ## Build and deployment readiness
 
-- `npm test`: **19 passed**.
-- `TEST_WEBKIT=1 BASE_PATH=/BS42MASTERPLAN/ npm run test:browser`: **32 passed**, sixteen per browser, with no skipped checks.
+- `npm test`: **22 passed**.
+- `TEST_WEBKIT=1 BASE_PATH=/BS42MASTERPLAN/ npm run test:browser`: **42 passed**, twenty-one per browser, with no skipped checks.
 - `BASE_PATH=/BS42MASTERPLAN/ npm run build`: **passed**, including Excel regeneration, completeness validation, TypeScript checks, Vite production output and PWA service-worker generation.
 - Repository-path manifest, assets, font, navigation, refresh and offline behavior verified at `/BS42MASTERPLAN/`.
 - GitHub Actions workflow is complete: dependency installation, parser/failure tests, build, Chromium production QA, artifact upload and Pages deployment.
@@ -129,3 +129,38 @@ Selecting a chart date now shows that session directly beneath the date selector
 The full roadmap below remains chronological with all eight entries, and the independent chart source region and formula references remain accessible. Selected chart points, date buttons and roadmap emphasis stay synchronized. The parser already validates that each chart date and its values correspond to the same-position roadmap entry. Source files, parsing, theme tokens, navigation and PWA configuration are unchanged.
 
 All eight date selections were checked at 430px and 1375px in Chromium and WebKit: the preview shows the matching source date, Role, min/max/midpoint and formula directly below the date control, the chart stays in place, and the full roadmap retains its original order. Both themes were visually reviewed at 430px. The 19 source/derivation checks, 32 browser checks and production PWA build passed. All 462 source cells remain mapped and Fueling Plan remains excluded.
+
+## Race Day simplification — 17 October 2026
+
+The inspected checkout had no Race Day implementation or fueling consumption tracker. The new page follows the existing design system and the user's complete replacement requirements, with exactly four main sections and Race Day added after the original three navigation destinations. No existing training page components, workbook cells, parser or generated data changed. The new schedule is explicitly user-authored data in `src/lib/raceDay.ts`; the workbook Fueling Plan sheet remains excluded. No calorie/macronutrient values or individual pre-race product carbohydrate split were invented.
+
+### Quantities and nutrition
+
+- Pre-race: ProEngy + AminoVITAL Blue, 70g, separate from every in-race total.
+- Planned: four Red × 28g + two Blackcurrant × 29g + one Orange × 29g = **199g from seven gels**.
+- Optional backup: one Blackcurrant, **29g**; maximum in-race **228g**.
+- Planned average: 199g / 4 hours = 49.75g/hour, displayed approximately **50g/hour**.
+- Planned caffeine: **75mg** in the Orange gel.
+- Carry: Red × 4, Blackcurrant × 3 (2 planned + 1 backup), Orange × 1 = **8 race gels**. Pre-race products are separate, one of each.
+- All nine timeline rows, times, products, carbohydrate values, caffeine and backup designation were checked against the explicit request. The timeline contains no form controls. Summary values remain fixed while packing selections change.
+
+### Checklist and interaction
+
+- Exactly five native checkbox controls, one per product type, within two labeled groups. Entire label rows are at least 74px high, with square checkbox visuals using the locally bundled Google check glyph.
+- Keyboard selection, count 0–5, mixed checked states, route navigation and refresh persistence pass in Chromium and WebKit.
+- Storage key `bs42-race-day-packing-v1` holds only the five packing booleans. Invalid/unknown saved values are ignored; corrupt data starts empty. Storage denial is reported visibly and keeps the checklist usable for the current visit.
+- Reset Checklist opens a browser confirmation. Dismissal preserves selections; acceptance removes only the packing key. Theme preference and unrelated stored values remain intact. No consumption reset exists.
+- There are no consumed-gel controls, live carbohydrate/caffeine totals, consumption counters/percentages, race-progress tracking, per-gel tracking, inventory tools, Race Day timers or notifications.
+
+### Layout, accessibility and deployment
+
+- Light/Dark overview, full timeline and partially checked packing screenshots were reviewed at **430 × 932** and **1375 × 1029**. All four routes pass overflow checks at 320, 390, 430, 596 and 1024px.
+- Text contrast is tested against actual surfaces at 4.5:1 or better. Light accent text/check styling uses #587900 against #F7F7F5 (4.72:1); Dark uses #C8FF00 against #101110 (16.00:1). Active navigation's structural accent remains at least 3:1. Visible keyboard focus and readable unchecked/checked labels remain available.
+- Four menu items retain comfortable mobile targets. Only Material Symbols are used; flag/check extend the existing local font subset without a runtime font request. No gradients, shadows, glow, emoji or new icon library was added.
+- **22 unit checks + 42 production browser checks pass**, including all pre-existing behavior, exact workbook reconciliation, Pages base-path routing, static fueling, checklist persistence/reset and offline navigation/reload into Race Day with saved checkbox states. Production build passes with 16 precached resources. The deployment workflow and PWA configuration require no changes.
+- Physical iPhone installation and safe-area behavior remain unverified on hardware; the verified mobile layout uses 430px browser viewports and WebKit.
+
+### Files added or modified
+
+- Added: `src/lib/raceDay.ts`, `src/pages/RaceDay.tsx`, `src/pages/RaceDay.css`, `tests/race-day.test.ts`, `tests/browser/race-day.spec.ts`.
+- Modified: `src/App.tsx`, `src/components/BottomNav.tsx`, `public/fonts/material-symbols-rounded.ttf`, `tests/browser/app.spec.ts`, `README.md`, `QA_AUDIT.md`, `BS42_PWA_Product_and_Implementation_Spec.md` (dated addendum).
