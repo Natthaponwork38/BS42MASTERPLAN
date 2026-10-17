@@ -39,7 +39,7 @@ Only these sheets are extracted:
 
 Fueling Plan contributes nothing to the generated data or production bundle. The original workbook remains intact in the source repository; it is never copied into the deployed site. The Fueling principle statement in Guardrails remains because that sheet is included.
 
-Race Day uses the separate schedule explicitly supplied by the user on 17 October 2026, defined in `src/lib/raceDay.ts`. It does not import or reactivate the excluded Fueling Plan sheet. Nutrition values are the supplied carbohydrate and caffeine amounts; no unprovided product nutrition is inferred.
+Race Day uses the separate schedules explicitly supplied by the user on 17 October 2026, defined in `src/lib/raceDay.ts`. It does not import or reactivate the excluded Fueling Plan sheet. Nutrition values are the supplied carbohydrate, caffeine and sodium amounts, plus the user-provided REVO CAPS label; no unprovided product nutrition is inferred.
 
 `npm run data` generates `src/data/master-plan.json`, `long-run.json`, `guardrails.json` and `audit.json`. `npm run build` always runs the parser first. Browser code imports only generated data and type-only source types; workbook parsing libraries stay out of the application bundle.
 
@@ -65,9 +65,11 @@ The green identity uses five semantic theme tokens: `--accent-primary` for selec
 
 ## Race Day
 
-The `#/race-day` route contains exactly four main sections: Race Overview, Fueling Summary, a static Fueling Timeline, and Packing Checklist with compact notes. Pre-race 70g is kept separate from the planned 199g / seven in-race gels. One optional 29g backup brings the maximum in-race amount to 228g, with eight gels to carry. Planned intake is approximately 50g/hour over four hours, with 75mg caffeine.
+The `#/race-day` route contains five main sections: Race Overview, Fueling Summary, a static Fueling Timeline, a static Electrolyte Schedule, and Packing Checklist with compact notes. Pre-race 70g is kept separate from the planned 199g / seven in-race gels. One optional 29g backup brings the maximum in-race amount to 228g, with eight gels to carry. Planned intake is approximately 50g/hour over four hours, with 75mg caffeine.
 
-The checklist has one checkbox for each of five product types, including quantities, and a packed-product count out of five. Only these booleans persist under `bs42-race-day-packing-v1`. Reset Checklist asks for confirmation and removes only that key. Malformed saved data falls back safely; blocked storage leaves the checklist usable for the visit and displays a storage notice. No consumption tracker, live nutrition total, race-progress state, timers, notifications or inventory management exists.
+REVO CAPS Electrolyte + BCAA has one centralized per-capsule definition: sodium 150mg, potassium 50mg, calcium 20mg, magnesium 15mg and BCAA 50mg. Carbohydrate/caffeine fields are absent because the supplied label does not establish them. The Provisional Race Plan lists two capsules 10–20 minutes before the start, then one at 01:00, 02:00 and 03:00. Five capsules provide 750mg sodium; the pre-race 300mg is excluded from in-race totals. Planned gels provide 900mg and the three in-race capsules provide 450mg, totaling 1,350mg, approximately 338mg/hour over four hours. The optional backup and unestablished food/beverage sodium are excluded. Quantities and totals are derived from the schedules and product definitions.
+
+The checklist has one checkbox for each of six product types, including REVO CAPS × 5 capsules under Pre-Race, and a packed-product count out of six. REVO CAPS does not count as a race gel. Only these booleans persist under `bs42-race-day-packing-v1`; existing five-product selections are preserved and the new REVO entry defaults to unchecked. Reset Checklist asks for confirmation and removes only that key. Malformed saved data falls back safely; blocked storage leaves the checklist usable for the visit and displays a storage notice. No consumption tracker, live nutrition total, race-progress state, timers, notifications or inventory management exists.
 
 ## PWA and offline
 

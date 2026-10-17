@@ -1,9 +1,9 @@
 import { test, expect } from '@playwright/test';
 
-test('Race Day has four sections, correct static nutrition and all four routes', async ({ page }) => {
+test('Race Day adds a static provisional electrolyte schedule without changing fueling or routes', async ({ page }) => {
   await page.goto('./#/race-day');
   await expect(page).toHaveTitle('BS42 · Race Day');
-  await expect(page.locator('.race-day>section>h2')).toHaveText(['Race Overview','Fueling Summary','Fueling Timeline','Packing Checklist']);
+  await expect(page.locator('.race-day>section>h2')).toHaveText(['Race Overview','Fueling Summary','Fueling Timeline','Electrolyte Schedule','Packing Checklist']);
   await expect(page.locator('.race-event')).toHaveText('Bangsaen42');
   await expect(page.locator('.race-event-date time')).toHaveAttribute('datetime','2026-11-15');
   await expect(page.locator('.race-overview-values')).toContainText('42.195K');
@@ -16,6 +16,17 @@ test('Race Day has four sections, correct static nutrition and all four routes',
   await expect(page.locator('.fueling-timeline input,.fueling-timeline button,.fueling-timeline a,[role=progressbar],progress')).toHaveCount(0);
   await expect(page.locator('.race-day button')).toHaveText(['Reset Checklist']);
   await expect(page.locator('.race-notes')).toContainText('In-race drink carbohydrate is not included in the gel totals.');
+  const electrolytes=page.getByRole('region',{name:'Electrolyte Schedule',exact:true});
+  await expect(electrolytes.locator('.electrolyte-plan')).toHaveText('Provisional Race Plan');
+  await expect(electrolytes.locator('.electrolyte-label-values dd')).toHaveText(['150 mg','50 mg','20 mg','15 mg','50 mg']);
+  await expect(electrolytes.locator('.electrolyte-time')).toHaveText(['Pre-race10–20 minutes before start','01:00','02:00','03:00']);
+  await expect(electrolytes.locator('.electrolyte-quantity')).toHaveText(['2capsules','1capsule','1capsule','1capsule']);
+  await expect(electrolytes.locator('.electrolyte-sodium')).toHaveText(['300 mg','150 mg','150 mg','150 mg']);
+  await expect(electrolytes.locator('.electrolyte-summary dd')).toHaveText(['5','750 mg','900 mg','1,350 mg','~338 mg/hour']);
+  await expect(electrolytes.locator('.electrolyte-scope')).toHaveText('Pre-race capsules: 300 mg, excluded from the in-race total. In-race capsules: 450 mg.');
+  await expect(electrolytes.locator('.electrolyte-breakdown li')).toHaveText(['AminoVITAL Red: 140 mg × 4 = 560 mg','X-REAL Blackcurrant: 110 mg × 2 = 220 mg','X-REAL C29+ Orange: 120 mg × 1 = 120 mg']);
+  await expect(electrolytes.locator('.electrolyte-caution')).toHaveText('Adjust electrolyte intake according to conditions, fluid intake, and symptoms. Heavy sweating alone does not establish sodium requirements. Do not force capsules or overdrink to meet a target.');
+  await expect(electrolytes.locator('input,button,a,progress')).toHaveCount(0);
   for (const [name,route] of [['Plan','plan'],['Long Run','long-run'],['Guardrails','guardrails'],['Race Day','race-day']]) {
     await page.getByRole('navigation').getByRole('link',{name,exact:true}).click();
     await expect(page).toHaveURL(new RegExp(`#/${route}$`));
@@ -24,25 +35,41 @@ test('Race Day has four sections, correct static nutrition and all four routes',
   await page.reload(); await expect(page.locator('.fueling-timeline>li')).toHaveCount(9);
 });
 
-test('five packing checkboxes persist independently of static fueling totals', async ({ page }) => {
+test('six packing checkboxes persist independently of static fueling and electrolyte totals', async ({ page }) => {
   await page.goto('./#/race-day');
   const boxes=page.getByRole('checkbox');
-  await expect(boxes).toHaveCount(5);
-  await expect(page.locator('.packing-quantity')).toHaveText(['× 1','× 1','× 4','× 3','× 1']);
-  await expect(page.getByRole('status')).toHaveText('0 / 5 product types packed');
+  await expect(boxes).toHaveCount(6);
+  await expect(page.locator('.packing-quantity')).toHaveText(['× 1','× 1','× 5 capsules','× 4','× 3','× 1']);
+  await expect(page.getByRole('status')).toHaveText('0 / 6 product types packed');
   const nutrition=await page.locator('.race-nutrition').textContent();
-  for (let i=0;i<5;i++) {
+  const sodium=await page.locator('.electrolyte-summary').textContent();
+  for (let i=0;i<6;i++) {
     await boxes.nth(i).focus(); await boxes.nth(i).press('Space');
-    await expect(page.getByRole('status')).toHaveText(`${i+1} / 5 product types packed`);
+    await expect(page.getByRole('status')).toHaveText(`${i+1} / 6 product types packed`);
   }
-  await page.reload(); await expect(page.locator('input:checked')).toHaveCount(5);
+  await page.reload(); await expect(page.locator('input:checked')).toHaveCount(6);
   await page.getByRole('checkbox',{name:/Blackcurrant/}).uncheck();
   await page.getByRole('link',{name:'Guardrails',exact:true}).click();
   await page.getByRole('link',{name:'Race Day',exact:true}).click();
-  await expect(page.getByRole('status')).toHaveText('4 / 5 product types packed');
+  await expect(page.getByRole('status')).toHaveText('5 / 6 product types packed');
   await expect(page.getByRole('checkbox',{name:/Blackcurrant/})).not.toBeChecked();
   expect(await page.locator('.race-nutrition').textContent()).toBe(nutrition);
+  expect(await page.locator('.electrolyte-summary').textContent()).toBe(sodium);
   expect(await page.locator('.packing-item').evaluateAll(els=>els.every(el=>el.getBoundingClientRect().height>=44))).toBe(true);
+  await expect(page.locator('.race-carry')).toHaveText('Total race gels to carry: 8');
+});
+
+test('the existing five-product localStorage checklist keeps its selections when REVO is added', async ({ page }) => {
+  await page.goto('./#/plan');
+  await page.evaluate(()=>localStorage.setItem('bs42-race-day-packing-v1',JSON.stringify({proengy:true,blue:true,red:true,blackcurrant:true,orange:true})));
+  await page.getByRole('link',{name:'Race Day',exact:true}).click();
+  await expect(page.getByRole('status')).toHaveText('5 / 6 product types packed');
+  await expect(page.getByRole('checkbox',{name:/REVO CAPS/})).not.toBeChecked();
+  await expect(page.locator('input:checked')).toHaveCount(5);
+  await page.getByRole('checkbox',{name:/REVO CAPS/}).check();
+  await page.reload();
+  await expect(page.getByRole('status')).toHaveText('6 / 6 product types packed');
+  await expect(page.getByRole('checkbox',{name:/REVO CAPS/})).toBeChecked();
   await expect(page.locator('.race-carry')).toHaveText('Total race gels to carry: 8');
 });
 
@@ -52,11 +79,11 @@ test('reset needs confirmation and leaves theme and unrelated storage intact', a
   await page.getByRole('checkbox',{name:/AminoVITAL Red/}).check();
   page.once('dialog',async dialog=>{expect(dialog.type()).toBe('confirm');await dialog.dismiss();});
   await page.getByRole('button',{name:'Reset Checklist',exact:true}).click();
-  await expect(page.getByRole('status')).toHaveText('1 / 5 product types packed');
+  await expect(page.getByRole('status')).toHaveText('1 / 6 product types packed');
   await page.reload(); await expect(page.getByRole('checkbox',{name:/AminoVITAL Red/})).toBeChecked();
-  page.once('dialog',async dialog=>{expect(dialog.message()).toContain('5 product types');await dialog.accept();});
+  page.once('dialog',async dialog=>{expect(dialog.message()).toContain('6 product types');await dialog.accept();});
   await page.getByRole('button',{name:'Reset Checklist',exact:true}).click();
-  await expect(page.getByRole('status')).toHaveText('0 / 5 product types packed');
+  await expect(page.getByRole('status')).toHaveText('0 / 6 product types packed');
   expect(await page.evaluate(()=>({packing:localStorage.getItem('bs42-race-day-packing-v1'),theme:localStorage.getItem('bs42-theme'),other:localStorage.getItem('unrelated-preference')}))).toEqual({packing:null,theme:'dark',other:'preserve'});
   await page.reload(); await expect(page.locator('input:checked')).toHaveCount(0);
 });
@@ -64,17 +91,17 @@ test('reset needs confirmation and leaves theme and unrelated storage intact', a
 test('invalid saved values and unavailable storage do not break packing', async ({ page }) => {
   await page.addInitScript(()=>localStorage.setItem('bs42-race-day-packing-v1','{"red":"true","orange":true,"unknown":true}'));
   await page.goto('./#/race-day');
-  await expect(page.getByRole('status')).toHaveText('1 / 5 product types packed');
+  await expect(page.getByRole('status')).toHaveText('1 / 6 product types packed');
   await expect(page.getByRole('checkbox',{name:/Orange/})).toBeChecked();
   await page.addInitScript(()=>Object.defineProperty(window,'localStorage',{get(){throw new DOMException('Denied','SecurityError');}}));
   await page.reload();
-  await expect(page.getByRole('status')).toHaveText('0 / 5 product types packed');
+  await expect(page.getByRole('status')).toHaveText('0 / 6 product types packed');
   await page.getByRole('checkbox',{name:/ProEngy/}).check();
-  await expect(page.getByRole('status')).toHaveText('1 / 5 product types packed');
+  await expect(page.getByRole('status')).toHaveText('1 / 6 product types packed');
   await expect(page.getByRole('alert')).toContainText('Browser storage is unavailable');
   page.once('dialog',dialog=>dialog.accept());
   await page.getByRole('button',{name:'Reset Checklist',exact:true}).click();
-  await expect(page.getByRole('status')).toHaveText('0 / 5 product types packed');
+  await expect(page.getByRole('status')).toHaveText('0 / 6 product types packed');
 });
 
 test('capture Race Day mobile and desktop themes', async ({ page },testInfo) => {
@@ -86,6 +113,10 @@ test('capture Race Day mobile and desktop themes', async ({ page },testInfo) => 
     await page.screenshot({path:testInfo.outputPath(`race-day-${theme}-430.png`)});
     await page.getByRole('heading',{name:'Fueling Timeline',exact:true}).evaluate(el=>window.scrollTo({top:el.getBoundingClientRect().top+scrollY-40,behavior:'instant'}));
     await page.screenshot({path:testInfo.outputPath(`race-timeline-${theme}-430.png`)});
+    await page.getByRole('heading',{name:'Electrolyte Schedule',exact:true}).evaluate(el=>window.scrollTo({top:el.getBoundingClientRect().top+scrollY-40,behavior:'instant'}));
+    await page.screenshot({path:testInfo.outputPath(`race-electrolytes-${theme}-430.png`)});
+    await page.locator('.electrolyte-summary').evaluate(el=>window.scrollTo({top:el.getBoundingClientRect().top+scrollY-40,behavior:'instant'}));
+    await page.screenshot({path:testInfo.outputPath(`race-sodium-${theme}-430.png`)});
     await page.getByRole('checkbox',{name:/AminoVITAL Blue/}).check();
     await page.getByRole('checkbox',{name:/AminoVITAL Red/}).check();
     await page.getByRole('heading',{name:'Packing Checklist',exact:true}).evaluate(el=>window.scrollTo({top:el.getBoundingClientRect().top+scrollY-40,behavior:'instant'}));

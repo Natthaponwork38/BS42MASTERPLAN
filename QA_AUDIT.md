@@ -49,8 +49,8 @@ The only presentation convention is training-week numbering: seven-day blocks st
 
 ## Build and deployment readiness
 
-- `npm test`: **22 passed**.
-- `TEST_WEBKIT=1 BASE_PATH=/BS42MASTERPLAN/ npm run test:browser`: **42 passed**, twenty-one per browser, with no skipped checks.
+- `npm test`: **24 passed**.
+- `TEST_WEBKIT=1 BASE_PATH=/BS42MASTERPLAN/ npm run test:browser`: **44 passed**, twenty-two per browser, with no skipped checks.
 - `BASE_PATH=/BS42MASTERPLAN/ npm run build`: **passed**, including Excel regeneration, completeness validation, TypeScript checks, Vite production output and PWA service-worker generation.
 - Repository-path manifest, assets, font, navigation, refresh and offline behavior verified at `/BS42MASTERPLAN/`.
 - GitHub Actions workflow is complete: dependency installation, parser/failure tests, build, Chromium production QA, artifact upload and Pages deployment.
@@ -164,3 +164,18 @@ The inspected checkout had no Race Day implementation or fueling consumption tra
 
 - Added: `src/lib/raceDay.ts`, `src/pages/RaceDay.tsx`, `src/pages/RaceDay.css`, `tests/race-day.test.ts`, `tests/browser/race-day.spec.ts`.
 - Modified: `src/App.tsx`, `src/components/BottomNav.tsx`, `public/fonts/material-symbols-rounded.ttf`, `tests/browser/app.spec.ts`, `README.md`, `QA_AUDIT.md`, `BS42_PWA_Product_and_Implementation_Spec.md` (dated addendum).
+
+## REVO CAPS electrolyte addition — 17 October 2026
+
+This supplement expands Race Day to five sections and the packing checklist to six product types, superseding the counts in the earlier Race Day audit. The static Electrolyte Schedule follows Fueling Timeline. It is labeled Provisional Race Plan and includes the user's full adjustment/overdrinking note. Packing remains the only race-preparation interaction.
+
+- One central REVO CAPS definition holds the supplied per-capsule label: sodium 150mg, potassium 50mg, calcium 20mg, magnesium 15mg and BCAA 50mg. Unknown carbohydrate/caffeine values remain absent. All REVO totals and its packing quantity derive from this definition and schedule.
+- Schedule: two capsules 10–20 minutes before the start, then one each at 01:00, 02:00 and 03:00. Total **5 capsules / 750mg sodium**. The **300mg pre-race** is explicitly excluded from in-race totals; three in-race capsules provide **450mg**.
+- Planned gel sodium derives from the unchanged planned gel rows: Red 140mg × 4 = 560mg; Blackcurrant 110mg × 2 = 220mg; Orange 120mg × 1 = 120mg. Total **900mg**. Combined in-race sodium is **1,350mg**, approximately **338mg/hour over four hours**. The optional backup, ProEngy, breakfast and on-course beverages do not enter planned sodium totals.
+- All original nine fueling rows, times, product order, quantities and backup status remain unchanged. Existing carbohydrate/caffeine assertions still pass: pre-race **70g**, planned **7 gels / 199g**, backup **29g**, maximum in-race **228g**, planned caffeine **75mg**, carry **8 gels**. REVO CAPS is outside the Race Gels group.
+- Six native product-type checkboxes include REVO CAPS × 5 capsules under Pre-Race. Tests load a legacy five-product saved checklist, preserve every selection and initialize REVO unchecked. Six-state persistence after refresh/navigation, cancellation/confirmation of reset, corrupt/denied storage and unrelated-storage preservation pass in Chromium and WebKit. Packing selections cannot change static sodium or fueling totals.
+- Electrolyte schedule, sodium summary and six-product checklist were visually reviewed in both themes at **430 × 932**, including WebKit. All routes retain responsive layout without horizontal overflow. New text uses existing semantic theme colors and passes actual-surface contrast checks. No new icons, gradients, rounded cards, glow or consumption controls were introduced. Physical iPhone hardware remains untested.
+- **24 unit checks + 44 Chromium/WebKit production browser checks pass**. The repository-base production build passes, including TypeScript, workbook regeneration and PWA generation with 16 precached resources. Existing hash routes and offline reload/navigation remain covered. No PWA or deployment configuration changes are needed.
+- Workbook, parser, generated training data, source contract, other page components, navigation and shared theme tokens have no changes. All **462 included source cells** remain represented and Fueling Plan remains fully excluded.
+
+Modified files: `src/lib/raceDay.ts`, `src/pages/RaceDay.tsx`, `src/pages/RaceDay.css`, `tests/race-day.test.ts`, `tests/browser/race-day.spec.ts`, `tests/browser/app.spec.ts`, `README.md`, `QA_AUDIT.md`, `BS42_PWA_Product_and_Implementation_Spec.md`.

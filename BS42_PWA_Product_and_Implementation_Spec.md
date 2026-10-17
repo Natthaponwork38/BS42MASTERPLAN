@@ -1606,3 +1606,15 @@ Race Day has exactly four main sections:
 There must be no consumed-gel state, live carbohydrate/caffeine totals, consumption counters/percentages, race-progress tracking or consumption reset, per-gel tracking, inventory, timers or notifications. Continue the existing mobile-first Light/Dark design system, square corners, semantic theme-aware green tokens, accessible contrast and touch targets, Material Symbols exclusively, and no emoji or decorative gradients.
 
 These Race Day values come from the user's explicit schedule, independently of the workbook. The Fueling Plan sheet remains excluded. No unprovided product nutrition should be inferred. Retain GitHub Pages hash routing, build-time Excel validation and offline support. QA must verify calculations, the four routes, checklist persistence and confirmed reset, both themes and 430px layout.
+
+## Race Day supplement — REVO CAPS, 17 October 2026
+
+This user-requested addition supersedes the preceding four-section/five-product counts. Race Day now has five sections: Race Overview, Fueling Summary, Fueling Timeline, Electrolyte Schedule, Packing Checklist. Preserve the existing gel schedule, all carbohydrate/caffeine totals, routes and styling.
+
+Define REVO CAPS Electrolyte + BCAA centrally from the user-supplied label: per capsule sodium 150mg, potassium 50mg, calcium 20mg, magnesium 15mg, BCAA 50mg. Do not assign unsupported carbohydrate or caffeine values. Derive quantities and totals rather than duplicating hardcoded results.
+
+Electrolyte Schedule is static, immediately after Fueling Timeline, labeled Provisional Race Plan: two capsules 10–20 minutes pre-race (300mg sodium), one at 01:00 (150mg), one at 02:00 (150mg), one at 03:00 (150mg). Show five capsules and 750mg total REVO sodium. Exclude the pre-race 300mg from in-race totals. Planned gel sodium is Red 140mg × 4 + Blackcurrant 110mg × 2 + Orange 120mg × 1 = 900mg. Three in-race capsules supply 450mg, giving 1,350mg in-race, approximately 338mg/hour over four hours. Exclude the optional backup, ProEngy, breakfast and on-course beverages from planned sodium totals; unestablished food/beverage sodium must not be inferred.
+
+Include this note verbatim: “Adjust electrolyte intake according to conditions, fluid intake, and symptoms. Heavy sweating alone does not establish sodium requirements. Do not force capsules or overdrink to meet a target.”
+
+Under Pre-Race packing add REVO CAPS Electrolyte + BCAA × 5 capsules, one checkbox, bringing the count to six product types. Preserve all five original products and existing saved selections, confirmed Reset Checklist and eight race gels to carry. REVO CAPS is not a race gel. Packing remains the only race-preparation interaction; do not add consumption tracking. Verify exact calculations, legacy checklist persistence/reset, both themes at 430px, unaffected existing pages, offline behavior and GitHub Pages routing.

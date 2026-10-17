@@ -290,7 +290,7 @@ test('both themes retain readable contrast, compact controls and only Material S
           }
           return getComputedStyle(document.documentElement).backgroundColor;
         };
-        const selector='.key-value,.countdown strong,.roadmap-heading>p,.subtitle,.eyebrow,.today-button,.today-tag,.today-section .day-context,.today-section dt,.today-section dd,.bottom-nav a[aria-current]>span:last-child,.theme-selected,.chart-reading,.chart-select button[aria-pressed=true],.race-day dt,.race-nutrition dd,.race-nutrition small,.race-note,.fueling-columns,.fueling-time,.fueling-product>span,.packing-count,.packing-name small,.race-notes p,.race-reset';
+        const selector='.key-value,.countdown strong,.roadmap-heading>p,.subtitle,.eyebrow,.today-button,.today-tag,.today-section .day-context,.today-section dt,.today-section dd,.bottom-nav a[aria-current]>span:last-child,.theme-selected,.chart-reading,.chart-select button[aria-pressed=true],.race-day dt,.race-nutrition dd,.race-nutrition small,.race-note,.fueling-columns,.fueling-time,.fueling-product>span,.packing-count,.packing-name small,.race-notes p,.race-reset,.electrolyte-plan,.electrolyte-label-values dd,.electrolyte-columns,.electrolyte-time,.electrolyte-quantity small,.electrolyte-summary dd,.electrolyte-breakdown,.packing-quantity small';
         return {
           text:[...document.querySelectorAll(selector)].map(el=>({color:getComputedStyle(el).color,bg:background(el)})),
           structure:[...document.querySelectorAll('.today-section,.bottom-nav a[aria-current] .material-symbols-rounded,.chart-selected')].map(el=>({

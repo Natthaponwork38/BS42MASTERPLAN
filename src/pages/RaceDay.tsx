@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { formatDate } from '../lib/dates';
-import { emptyPacking, fuelingSummary as summary, fuelingTimeline, PACKING_STORAGE_KEY, packingProducts, parsePacking, raceOverview, type PackingId, type PackingState } from '../lib/raceDay';
+import { electrolyteNote, electrolyteSchedule, electrolyteSummary as electrolytes, emptyPacking, fuelingSummary as summary, fuelingTimeline, PACKING_STORAGE_KEY, packingProducts, parsePacking, plannedGelSodium, raceOverview, revoCaps, revoNutrients, type PackingId, type PackingState } from '../lib/raceDay';
 import './RaceDay.css';
 
 function loadChecklist() {
@@ -20,7 +20,7 @@ export function RaceDay() {
   };
   const toggle = (id: PackingId, checked: boolean) => save({ ...checklist.packed, [id]: checked });
   const reset = () => {
-    if (window.confirm('Reset Checklist? This will uncheck all 5 product types.')) save(emptyPacking(), true);
+    if (window.confirm(`Reset Checklist? This will uncheck all ${packingProducts.length} product types.`)) save(emptyPacking(), true);
   };
   const packedCount = packingProducts.filter(item => checklist.packed[item.id]).length;
   return <div className="race-day">
@@ -57,6 +57,32 @@ export function RaceDay() {
       </li>)}</ol>
     </section>
 
+    <section aria-labelledby="electrolyte-title">
+      <h2 id="electrolyte-title">Electrolyte Schedule</h2>
+      <p className="electrolyte-plan">Provisional Race Plan</p>
+      <p className="electrolyte-product-name">{revoCaps.name}</p>
+      <p className="race-note">Per capsule · product label</p>
+      <dl className="electrolyte-label-values">{Object.entries(revoCaps.nutrientsMg).map(([nutrient, mg]) => <div key={nutrient}><dt>{nutrient === 'bcaa' ? 'BCAA' : nutrient.charAt(0).toUpperCase() + nutrient.slice(1)}</dt><dd>{mg} mg</dd></div>)}</dl>
+      <div className="electrolyte-columns" aria-hidden="true"><span>Elapsed</span><span>Product</span><span>Qty</span><span>Sodium</span></div>
+      <ol className="electrolyte-schedule">{electrolyteSchedule.map(item => <li key={item.time}>
+        <span className="electrolyte-time">{item.time}{item.note && <small>{item.note}</small>}</span>
+        <span className="electrolyte-product">{revoCaps.shortName}</span>
+        <span className="electrolyte-quantity">{item.quantity}<small>{item.quantity === 1 ? 'capsule' : 'capsules'}</small></span>
+        <span className="electrolyte-sodium">{revoNutrients(item.quantity).sodium} mg</span>
+      </li>)}</ol>
+      <dl className="electrolyte-summary">
+        <div><dt>Total capsules</dt><dd>{electrolytes.totalCapsules}</dd></div>
+        <div><dt>Total sodium from REVO CAPS</dt><dd>{electrolytes.totalNutrientsMg.sodium} mg</dd></div>
+        <div><dt>Sodium from planned race gels</dt><dd>{electrolytes.plannedGelSodiumMg} mg</dd></div>
+        <div className="electrolyte-in-race"><dt>In-race sodium · gels + {electrolytes.inRaceCapsules} capsules</dt><dd>{electrolytes.inRaceSodiumMg.toLocaleString('en-GB')} mg</dd></div>
+        <div><dt>Average in-race · {raceOverview.hours} hours</dt><dd>~{electrolytes.inRaceSodiumPerHourMg} mg/hour</dd></div>
+      </dl>
+      <p className="race-note electrolyte-scope">Pre-race capsules: {electrolytes.preRaceSodiumMg} mg, excluded from the in-race total. In-race capsules: {electrolytes.inRaceCapsuleSodiumMg} mg.</p>
+      <ul className="electrolyte-breakdown">{plannedGelSodium.map(item => <li key={item.product}>{item.product}: {item.sodiumMg} mg × {item.quantity} = {item.totalSodiumMg} mg</li>)}</ul>
+      <p className="race-note">Planned totals exclude the optional Blackcurrant backup, ProEngy, breakfast and on-course beverages. Sodium amounts for those pre-race foods and beverages have not been established.</p>
+      <p className="race-note electrolyte-caution">{electrolyteNote}</p>
+    </section>
+
     <section aria-labelledby="packing-title">
       <h2 id="packing-title">Packing Checklist</h2>
       <p className="packing-count" role="status">{packedCount} / {packingProducts.length} product types packed</p>
@@ -66,7 +92,7 @@ export function RaceDay() {
           <input type="checkbox" checked={checklist.packed[item.id]} onChange={event => toggle(item.id, event.currentTarget.checked)} />
           <span className="material-symbols-rounded packing-check" aria-hidden="true">check</span>
           <span className="packing-name">{item.name}{item.detail && <small>{item.detail}</small>}</span>
-          <span className="packing-quantity">× {item.quantity}</span>
+          <span className="packing-quantity">× {item.quantity}{'unit' in item && <small> {item.unit}</small>}</span>
         </label>)}
       </fieldset>)}
       <p className="race-carry">Total race gels to carry: <strong>{summary.carryGels}</strong></p>
