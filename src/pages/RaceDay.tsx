@@ -71,7 +71,7 @@ export function RaceDay() {
       </fieldset>)}
       <p className="race-carry">Total race gels to carry: <strong>{summary.carryGels}</strong></p>
       <button className="race-reset" type="button" onClick={reset}>Reset Checklist</button>
-      <div className="race-notes"><h3>Hydration &amp; fueling notes</h3><p>Review your practiced hydration plan separately. Drink carbohydrate is not included in these totals.</p><p>The Blackcurrant backup is optional and excluded from the planned {summary.plannedCarbs}g. This timeline is for reviewing the plan before the race.</p></div>
+      <div className="race-notes"><h3>Hydration &amp; fueling notes</h3><p>Review your practiced hydration plan separately. In-race drink carbohydrate is not included in the gel totals.</p><p>The Blackcurrant backup is optional and excluded from the planned {summary.plannedCarbs}g. This timeline is for reviewing the plan before the race.</p></div>
     </section>
   </div>;
 }

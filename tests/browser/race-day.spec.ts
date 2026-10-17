@@ -15,6 +15,7 @@ test('Race Day has four sections, correct static nutrition and all four routes',
   await expect(page.locator('.fueling-timeline .fueling-carbs')).toHaveText(['70g carbohydrate','28g carbohydrate','29g carbohydrate','28g carbohydrate','29g carbohydrate','28g carbohydrate','29g carbohydrate','28g carbohydrate','29g carbohydrate']);
   await expect(page.locator('.fueling-timeline input,.fueling-timeline button,.fueling-timeline a,[role=progressbar],progress')).toHaveCount(0);
   await expect(page.locator('.race-day button')).toHaveText(['Reset Checklist']);
+  await expect(page.locator('.race-notes')).toContainText('In-race drink carbohydrate is not included in the gel totals.');
   for (const [name,route] of [['Plan','plan'],['Long Run','long-run'],['Guardrails','guardrails'],['Race Day','race-day']]) {
     await page.getByRole('navigation').getByRole('link',{name,exact:true}).click();
     await expect(page).toHaveURL(new RegExp(`#/${route}$`));
